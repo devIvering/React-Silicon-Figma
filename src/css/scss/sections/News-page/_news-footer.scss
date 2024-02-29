@@ -1,0 +1,40 @@
+#subscribe-section {
+    display: flex;
+    
+
+    .signup-container {
+        width: 100%;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+        gap: 20px;
+
+        .footer-head {
+            display: flex;
+            gap: 30px;
+        }
+
+        .checkbox-holder {
+            display: flex;
+            gap: 30px;
+    
+            .checkboxes {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 10px;
+    
+                label {
+                    @include text-s;
+                }
+            }
+        }
+
+        .subscribe-box {
+            display: flex;
+        }
+
+    }
+
+
+}

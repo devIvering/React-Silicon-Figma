@@ -1,0 +1,53 @@
+#map-section {
+    margin: 9rem 0;
+
+    .container {
+        display: grid;
+        justify-content: space-between;
+        gap: 6rem;
+
+        @include lg {
+            display: flex;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .center-one, .center-two {
+
+                div {
+                    display: flex;
+                    gap: 10px;
+                }
+
+                .opening-hours {
+                    display: grid;
+                    justify-content: flex-start;
+                    grid-template-areas:    "icon timeone timeone"
+                                            "icon timetwo timetwo";
+                }
+            }
+
+            .footer-social {
+                display: flex;
+                gap: 20px;
+            }
+        }
+    }
+
+    .clock-icon {
+        grid-area: icon;
+    }
+
+    .time-one {
+        grid-area: timeone;
+        margin: 0;
+    }
+
+    .time-two {
+        grid-area: timetwo;
+
+    }
+}

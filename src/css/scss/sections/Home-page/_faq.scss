@@ -1,0 +1,117 @@
+#faq-section {
+    margin-top: 5rem;
+
+    .container {
+        display: grid;
+        gap: 40px;
+        text-align: center;
+
+        @include lg {
+        display: flex;
+        justify-content: center;
+        text-align: start;
+        gap: 8rem;
+        }
+
+        .contact {
+            
+            .contact-info {
+                display: flex;
+                justify-content: center;
+                gap: 40px;
+
+                @include lg {
+                    justify-content: flex-start;
+                    gap: 20px;
+                }
+                
+           
+                .phone-contact, .message-contact {
+                    border: 1px solid $gray-300;
+                    border-radius: 8px;
+                    padding: 20px;
+                    
+        
+                    .green-contact {
+                        color: $success;
+                    }
+        
+                    p {
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+
+        .accordion-group {
+            
+            
+            .card {
+                margin-bottom: 20px;
+                border: none;
+                
+                h6 {
+                    @include h6;
+                    padding: 12px;
+                }
+                
+                p {
+                    @include text-s;
+                }
+                
+                .card-body {
+                    @include shadow-l;
+                    background-color: white;
+                    z-index: 1;
+
+                    @include lg {
+                        width: 600px;
+                    }
+                }
+            }
+            .heading {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            
+            .heading i {
+                position: absolute;
+                right: 20px;
+                height: 36px;
+                width: 36px;
+                background-color: #F3F6FF;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+
+                @include lg {
+                    right: 10px;
+                }
+            }
+            
+            .heading button {
+                @include shadow-l;
+                position: relative;
+                background-color: transparent;
+                border: none;
+                z-index: 1;
+                text-align: left;
+                width: 520px;
+
+                @include lg {
+                    width: 600px;
+                }
+                
+            }
+            i.active {
+                background-color: #6366F1 !important;
+                color: white;
+                
+            }
+        }
+
+    }
+}

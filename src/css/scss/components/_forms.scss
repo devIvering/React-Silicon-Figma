@@ -1,0 +1,74 @@
+form {
+    display: grid;
+    gap: 10px;
+
+
+
+    .input-group {
+
+
+        label {
+            width: 100%;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+        
+        input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 8px !important;
+            border: 1px solid $gray-500;
+        }
+    }
+
+    .checkbox-group {
+        padding: 10px 0 20px 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+
+        input {
+            border-radius: 8px !important;
+            border: 1px solid $gray-700;
+        }
+
+        label {
+            width: 100%;
+        }
+        
+    }
+}
+
+.subscribe-box {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .form-and-button {
+        display: flex;
+    }
+    
+    .error-message-box {
+        margin-top: 5px;
+        color: red;
+    }
+
+    .form-email {
+        padding: 10px;
+        background-image: url('/images/subscribe-section/bx-envelope.svg');
+        background-size: 20px; 
+        background-repeat: no-repeat;
+        background-position: 10px center;
+        padding-left: 40px; 
+        border-radius: 10px 0 0 10px;
+        border: 1px solid $gray-300;
+        width: 400px;
+
+        .email-input::placeholder {
+            color: $gray-500;
+        }
+
+    }
+    
+}

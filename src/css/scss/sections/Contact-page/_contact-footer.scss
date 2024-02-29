@@ -1,0 +1,74 @@
+#contact-footer {
+    background-color: black;
+    
+    a {
+        color: white;
+    }
+    
+    .container {
+        display: flex;
+        justify-content: space-between;
+        padding: 90px;
+        gap: 120px;
+        
+        #newsletter-box {
+            display: grid;
+            flex: 1;
+            gap: 10px;
+
+            .subscribe-box {
+                
+                input {
+                    background-color: rgb(17, 16, 16);
+                    color: white;
+                    border: 1px thin lightgrey;
+                    opacity: 0.7;
+                }
+
+                button {
+                    border-radius: 0 10px 10px 0;
+                    height: 48px;
+                }
+            }
+
+            p {
+                @include text-s;
+                color: white;
+                opacity: 0.7;
+            }
+
+            h6 {
+                margin-top: 20px;
+                color: white;
+            }
+
+            .footer-text {
+                margin: 30px 0 60px 0;
+            }
+        }
+
+        .footer-links-box {
+            display: flex;
+            flex: 1;
+            justify-content: space-between;
+
+            .first-links-box {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                gap: 50px;
+            }
+
+            .home-links, .terms-links, .second-links-box, .third-links-box {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                gap: 5px;
+            }
+
+            .example-gmail {
+                color: blue;
+            }
+        }
+    }
+}

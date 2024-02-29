@@ -1,0 +1,93 @@
+#features {
+    
+    .container {
+        align-items: center;
+
+        .feature-image {
+            margin-bottom: 20px;
+        }
+
+
+        @include xl {
+            display: grid;
+            gap: 3rem;
+            padding-right: 3rem;
+
+        }
+
+        h1 {
+            @include h1;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            @include h6;
+        }
+
+        p {
+           color: $gray-700;
+        }
+
+        .box {
+            border: none;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        @include lg {
+            display: flex;
+            gap: 10rem;
+        }
+
+        .content {
+
+            display: grid;
+            gap: 30px;
+            grid-template-areas:    "header"
+                                    "payment"
+                                    "security"
+                                    "stats"
+                                    "support"
+                                    "cash"
+                                    "standard";
+            
+            @include lg {
+                grid-template-areas:    "header header"
+                                        "payment security"
+                                        "stats support"
+                                        "cash standard";
+
+            }
+
+        }
+
+        #features-header {
+            grid-area: header;
+        }
+    
+        #features-payment {
+            grid-area: payment;
+        }
+    
+        #features-security {
+            grid-area: security;
+        }
+    
+        #features-stats {
+            grid-area: stats;
+        }
+    
+        #features-support {
+            grid-area: support;
+        }
+    
+        #features-cash {
+            grid-area: cash;
+        }
+    
+        #features-standards {
+            grid-area: standard;
+        }
+    }
+
+}

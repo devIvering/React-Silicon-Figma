@@ -1,0 +1,46 @@
+    #how-it-works {
+
+        background: $gradient-background;
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem;
+
+            @include lg {
+                text-align: center;
+                padding: 10rem;
+
+            }
+
+            .content {
+
+                .phone-images {
+                    display: none;
+                    
+                    @include lg {
+                        display: flex;
+                        justify-content: space-between;
+                        gap: 7rem;
+                        margin: 40px 0;
+                    }
+                   
+                }
+
+                .step-2-text {
+                    text-align: start;
+                    margin: 20px 0 20px 0;
+                    
+
+                    @include lg {
+                        margin: 0 220px 0 220px;
+                        text-align: center;
+                    }
+                }
+
+            }
+
+            
+        }
+    }

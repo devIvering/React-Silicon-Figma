@@ -1,0 +1,36 @@
+
+    .error-container {
+        display: grid;
+        gap: 20px;
+        padding: 60px;
+    
+        .error-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .error-text-holder {
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    
+    }
+
+    .error-footer {
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 200px;
+        
+
+        p {
+            @include text-s;
+        }
+    }
+    
+
+
+

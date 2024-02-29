@@ -1,0 +1,114 @@
+
+
+.contact-header {
+    background-color: $gray-100;
+}
+
+.contact-link {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    padding-left: 60px;
+
+    @include lg {
+        padding: 30px 0 0 100px;
+    }
+}
+
+#contact-us {
+    background-color: $gray-100;
+    
+    .container {
+        display: grid;
+        gap: 5rem;
+        height: 100%;
+
+        @include lg {
+            display: flex;
+        }
+
+        h1 {
+            margin: 2rem 0 1rem 0;
+            @include h2;
+        }
+
+        .contact-us-box {
+            display: grid;
+            gap: 50px;
+
+            .email-us {
+                display: flex;
+                gap: 20px;
+            }
+
+            .careers {
+                display: flex;
+                gap: 20px;
+            }
+
+        }
+
+
+        #online-form {
+        
+            .container {
+                @include shadow-l;
+                border-radius: 5px;
+                background-color: white;
+                padding: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        
+            form {
+                
+                @include md {
+                    padding: 0;
+                }
+
+                #form-email, #form-specialist, #form-fullname {
+                    display: flex;
+                    flex-direction: column;
+
+                    .error-message-box {
+                        color: red;
+                    }
+                }
+        
+                .content {
+                    display: grid;
+                    gap: 10px;
+                    grid-template-columns: 1fr;
+                    grid-template-areas:    "fullname"
+                                            "email"
+                                            "specialist"
+                                            "date"
+                                            "time";
+                    @include lg {
+                        grid-template-columns: 1fr 1fr;
+                        grid-template-areas:    "fullname fullname"
+                                                "email email"
+                                                "specialist specialist"
+                                                "date time";
+                                                
+                    }
+        
+                    #form-fullname      { grid-area: fullname; }
+                    #form-email         { grid-area: email; }
+                    #form-specialist    { grid-area: specialist; }
+                    #form-date          { grid-area: date; }
+                    #form-time          { grid-area: time; }
+
+                    button {
+                        padding: 15px;
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+        

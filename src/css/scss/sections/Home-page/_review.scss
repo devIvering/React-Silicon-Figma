@@ -1,0 +1,48 @@
+#review-section {
+    background: $gradient-background;
+
+
+    .container {
+        padding: 100px 0;
+
+        @include lg {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .rating-box {
+            margin-bottom: 15px;
+        }
+
+        .box-one {
+            flex: 1;   
+            
+            .button-box {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                margin-top: 40px;
+
+                button {
+                    background-color: white !important;
+                    margin-top: 2rem;
+                }
+
+                @include lg {
+                    justify-content: flex-start;
+                }
+            }
+        }
+
+        .box-two, .box-three {
+            background-color: white;
+            margin-bottom: 20px;
+
+            @include lg {
+                padding: 15px;
+                flex: 1;
+            }
+        }
+
+    }
+}

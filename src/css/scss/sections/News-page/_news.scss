@@ -1,0 +1,63 @@
+.news-section {
+    padding: 60px;
+
+    #news {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+
+        @include md {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include lg {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+    
+        .news-card {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid black;
+
+            .btn-save {
+                background-color: $white;
+                height: 36px;
+                width: 36px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                border: none;
+            }
+
+            .content {
+                padding: 20px;
+
+                .type-and-date {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .news-category {
+                        color: $gray-800;
+                        font-weight: 600;
+                        background-color: $gray-200;
+                        border-radius: 10px;
+                        padding: 5px;
+                    }
+                }
+            }
+
+            .news-profile {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+        }
+    }
+}
+
