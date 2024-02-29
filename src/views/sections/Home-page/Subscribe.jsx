@@ -1,5 +1,8 @@
 import React from 'react'
 import NotificationIcon from '../../../images/subscribe-section/notification.svg'
+import { handleSubmit } from '../../../js/script'
+import { validateEmail } from '../../../js/script'
+
 
 const Subscribe = () => {
   return (
@@ -11,8 +14,8 @@ const Subscribe = () => {
                     </div>
                     <div className="subscribe-box">
                         <div className="form-and-button">
-                            <form onsubmit="handleSubmit(event)" novalidate>
-                             <input required onKeyUp="validateEmail(this)" placeholder="Your Email" name="email" type="email" className="form-email" />
+                            <form onSubmit={handleSubmit} noValidate>
+                             <input required onKeyUp={validateEmail} placeholder="Your Email" name="email" type="email" className="form-email" />
                          </form>
                             <button id="subscribe-button" className="btn-theme" >Subscribe</button>
                         </div>

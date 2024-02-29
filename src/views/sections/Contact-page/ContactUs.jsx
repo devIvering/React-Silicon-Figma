@@ -5,6 +5,9 @@ import RightChevron from '../../../images/icons/bx-chevrons-right.svg'
 import EnvelopeIcon from '../../../images/icons/bx-envelope.svg'
 import BlueArrow from '../../../images/icons/Vector_bluearrow.svg'
 import GroupIcon  from '../../../images/icons/add-group.svg'
+import { handleSubmit } from '../../../js/script'
+import { validateEmail } from '../../../js/script'
+import { validateName } from '../../../js/script'
 
 const ContactUs = () => {
   return (
@@ -53,9 +56,9 @@ const ContactUs = () => {
                     <h1>Get Online Consultation</h1>
                     <div className="content">
                         <div id="form-fullname" className="input-group">
-                            <form onsubmit="handleSubmit(event)" novalidate>
+                            <form onSubmit={handleSubmit} noValidate>
                                 <label htmlFor="form-fullname">Full Name</label>
-                                <input required onKeyUp="validateName(this)" name="text" type="text" className="form-text" />
+                                <input required onKeyUp={validateName} name="text" type="text" className="form-text" />
                             </form>
                             <div className="error-message-box">
                                 <div className="name-error-message"></div>       
@@ -63,14 +66,14 @@ const ContactUs = () => {
                         </div>
                         <div id="form-email" className="input-group">                                     
                                 <label htmlFor="form-email">Email Address</label>
-                                <input required onKeyUp="validateEmail(this)" name="email" type="email" className="form-email" />
+                                <input required onKeyUp={validateEmail} name="email" type="email" className="form-email" />
                             <div className="error-message-box">
                                 <div className="email-error-message"></div>       
                             </div>
                         </div>
                         <div id="form-specialist" className="input-group">
                                 <label htmlFor="form-specialist">Specialist</label>
-                                <input required onKeyUp="validateName(this)" name="text" type="text" className="form-text" />
+                                <input required onKeyUp={validateName} name="text" type="text" className="form-text" />
                             <div className="error-message-box">
                                 <div className="name-error-message"></div>       
                             </div>

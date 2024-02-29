@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import Logo from '../../images/logo/silicon-logo-light_theme.svg'
+import { toggleMenu } from '../../js/script'
 
 const Header = () => {
   return (
@@ -32,7 +33,7 @@ const Header = () => {
 
         <a id="btn-account" className="btn btn-theme" href="signin.html"><i className="fa-regular fa-user"></i> Sign in / up</a>
         
-        <button id="btn-menu"><i className="fa-regular fa-bars"></i></button>
+        <button id="btn-menu" onClick={toggleMenu}><i className="fa-regular fa-bars"></i></button>
       </div>
     </header>
   )
