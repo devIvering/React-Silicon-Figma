@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import HomeIcon from '../../../images/icons/bx-home-alt.svg'
 import RightChevron from '../../../images/icons/bx-chevrons-right.svg'
@@ -8,8 +8,33 @@ import GroupIcon  from '../../../images/icons/add-group.svg'
 import { handleSubmit } from '../../../js/script'
 import { validateEmail } from '../../../js/script'
 import { validateName } from '../../../js/script'
+import DropDownButton from '../../components/DropDownButton'
+
 
 const ContactUs = () => {
+
+    const url = 'https://kyhnet23-assignment.azurewebsites.net/api/specialists'
+    const [specialists, setSpecialists] = useState([])
+    const loaded = useRef(false)
+    
+    useEffect(() => {
+        if (!loaded.current) {
+            setSpecialists([])
+        
+            const fetchData = async () => {
+                const result = await fetch(url)
+                const data = await result.json()
+                
+                for (let item of data) {
+                    setSpecialists(current => [...current, { value: item.id, text: `${item.firstName} ${item.lastName}` }])
+                }
+            }
+
+            fetchData()
+            loaded.current = true
+        }
+    }, [])
+
   return (
     <section id="contact-us">
     <div className="contact-link">
@@ -52,14 +77,12 @@ const ContactUs = () => {
         </div>
         <section id="online-form">
             <div className="container">
-                <form>
+                <form onSubmit={handleSubmit} noValidate>
                     <h1>Get Online Consultation</h1>
                     <div className="content">
                         <div id="form-fullname" className="input-group">
-                            <form onSubmit={handleSubmit} noValidate>
                                 <label htmlFor="form-fullname">Full Name</label>
                                 <input required onKeyUp={validateName} name="text" type="text" className="form-text" />
-                            </form>
                             <div className="error-message-box">
                                 <div className="name-error-message"></div>       
                             </div>
@@ -72,8 +95,10 @@ const ContactUs = () => {
                             </div>
                         </div>
                         <div id="form-specialist" className="input-group">
-                                <label htmlFor="form-specialist">Specialist</label>
-                                <input required onKeyUp={validateName} name="text" type="text" className="form-text" />
+                        <label htmlFor="form-specialist-">Specialists</label>
+                            <div className="dropdown-container">
+                                <DropDownButton options={specialists} />
+                            </div>
                             <div className="error-message-box">
                                 <div className="name-error-message"></div>       
                             </div>
@@ -96,5 +121,4 @@ const ContactUs = () => {
 
   )
 }
-
 export default ContactUs
