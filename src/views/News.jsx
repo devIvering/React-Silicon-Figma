@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import ItemBox from '../views/components/ItemBox';
+import NewsFooter from '../views/sections/News-page/NewsFooter'
+import { NavLink } from 'react-router-dom'
+import HomeIcon from '../images/icons/bx-home-alt.svg'
+import RightChevron from '../images/icons/bx-chevrons-right.svg'
 
 const News = () => {
   const [news, setNews] = useState([]);
@@ -23,11 +27,25 @@ const News = () => {
   }, []);
 
   return (
+    <>
+    <div className="contact-link">
+        <img src={HomeIcon} alt="Home-icon" />
+        <NavLink to="/">Home</NavLink>
+        <img src={RightChevron} alt="Right-chevron" />
+        <NavLink to="/news">News</NavLink>
+    </div>
+    <div className="contact-link">
+      <h1>Our News</h1>
+    </div>
     <div className="news-container">
       {news.map((item) => (
         <ItemBox key={item.id} item={item} />
       ))}
     </div>
+    <div>
+      <NewsFooter />
+    </div>
+    </>
   );
 };
 

@@ -1,7 +1,8 @@
-    .card-container {
+    .news-container {
         display: grid;
         grid-template-columns: 1fr;
-        border: 1px solid  blue;
+        gap: 30px;
+        padding: 30px 100px;
         
         @include md {
             grid-template-columns: 1fr 1fr;
@@ -15,7 +16,6 @@
         .news-card {
             position: relative;
             border-radius: 8px;
-            border: 1px solid red;
 
             .news-image {
                 border-radius: 10px 10px 0 0;
