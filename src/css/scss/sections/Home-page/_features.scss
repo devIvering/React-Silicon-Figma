@@ -51,7 +51,7 @@
                                     "cash"
                                     "standard";
             
-            @include lg {
+            @include md {
                 grid-template-areas:    "header header"
                                         "payment security"
                                         "stats support"
