@@ -1,7 +1,7 @@
 import React from 'react'
 import NotificationIcon from '../../../images/subscribe-section/notification.svg'
+import EmailValidationInput from '../../components/EmailValidationInput'
 import { handleSubmit } from '../../../js/script'
-import { validateEmail } from '../../../js/script'
 
 
 const Subscribe = () => {
@@ -15,7 +15,7 @@ const Subscribe = () => {
                     <div className="subscribe-box">
                         <div className="form-and-button">
                             <form onSubmit={handleSubmit} noValidate>
-                             <input required onKeyUp={validateEmail} placeholder="Your Email" name="email" type="email" className="form-email" />
+                             <EmailValidationInput />
                          </form>
                             <button id="subscribe-button" className="btn-theme" >Subscribe</button>
                         </div>

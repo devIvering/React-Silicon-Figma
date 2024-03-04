@@ -1,28 +1,34 @@
-import React, { useEffect, useState } from 'react'
-import Card from './sections/News-page/Card'
-import NewsFooter from './sections/News-page/NewsFooter'
-
-
+import React, { useEffect, useState } from 'react';
+import ItemBox from '../views/components/ItemBox';
 
 const News = () => {
- const url = 'https://kyhnet23-assignment.azurewebsites.net/api/news'
- const [news, setNews] = useState([])
+  const [news, setNews] = useState([]);
 
-
- useEffect(() => {
+  useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(url)
-      const data = await res.json()
-      setNews(data)
-    }
- }, [])
+      try {
+        const response = await fetch('https://kyhnet23-assignment.azurewebsites.net/api/news');
+        if (response.ok) {
+          const data = await response.json();
+          setNews(data);
+        } else {
+          console.error('Failed to fetch news:', response.status);
+        }
+      } catch (error) {
+        console.error('Error during news fetch:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
-    <>
-      <Card title="Our News" news={news} />
-      <NewsFooter />
-    </>
-  )
-}
+    <div className="news-container">
+      {news.map((item) => (
+        <ItemBox key={item.id} item={item} />
+      ))}
+    </div>
+  );
+};
 
-export default News
+export default News;

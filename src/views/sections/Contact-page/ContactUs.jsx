@@ -5,10 +5,10 @@ import RightChevron from '../../../images/icons/bx-chevrons-right.svg'
 import EnvelopeIcon from '../../../images/icons/bx-envelope.svg'
 import BlueArrow from '../../../images/icons/Vector_bluearrow.svg'
 import GroupIcon  from '../../../images/icons/add-group.svg'
-import { handleSubmit } from '../../../js/script'
-import { validateEmail } from '../../../js/script'
-import { validateName } from '../../../js/script'
 import DropDownButton from '../../components/DropDownButton'
+import EmailForm from '../../components/EmailValidationInput'
+import NameValidationInput from '../../components/NameValidationInput'
+import { handleSubmit } from '../../../js/script'
 
 
 const ContactUs = () => {
@@ -77,19 +77,17 @@ const ContactUs = () => {
         </div>
         <section id="online-form">
             <div className="container">
-                <form onSubmit={handleSubmit} noValidate>
+            <form onSubmit={(e) => handleSubmit(e)} noValidate>
                     <h1>Get Online Consultation</h1>
                     <div className="content">
                         <div id="form-fullname" className="input-group">
-                                <label htmlFor="form-fullname">Full Name</label>
-                                <input required onKeyUp={validateName} name="text" type="text" className="form-text" />
+                            <NameValidationInput />
                             <div className="error-message-box">
                                 <div className="name-error-message"></div>       
                             </div>
                         </div>
-                        <div id="form-email" className="input-group">                                     
-                                <label htmlFor="form-email">Email Address</label>
-                                <input required onKeyUp={validateEmail} name="email" type="email" className="form-email" />
+                        <div id="form-email" className="input-group">                                         
+                                <EmailForm />
                             <div className="error-message-box">
                                 <div className="email-error-message"></div>       
                             </div>

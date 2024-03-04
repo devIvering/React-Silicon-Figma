@@ -1,6 +1,8 @@
 import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import SiliconLogo from '../../../images/logo/silicon-logo-dark_theme.svg'
+import EmailValidationInput from '../../components/EmailValidationInput'
+import { handleSubmit } from '../../../js/script'
 
 const ContactFooter = () => {
   return (
@@ -15,8 +17,8 @@ const ContactFooter = () => {
              <h6>Subscribe to our newsletter</h6>
              <div className="subscribe-box">
                 <div className="form-and-button">
-                    <form onsubmit="handleSubmit(event)" novalidate>
-                     <input required onKeyUp="validateEmail(this)" placeholder="Your Email" name="email" type="email" className="form-email" />
+                    <form onSubmit={handleSubmit} noValidate>
+                     <EmailValidationInput />
                  </form>
                     <button id="subscribe-button" className="btn-theme" >Subscribe</button>
                 </div>
