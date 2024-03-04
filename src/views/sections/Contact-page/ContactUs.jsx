@@ -86,7 +86,8 @@ const ContactUs = () => {
                                 <div className="name-error-message"></div>       
                             </div>
                         </div>
-                        <div id="form-email" className="input-group">                                         
+                        <div id="form-email" className="input-group">   
+                        <label htmlFor="form-email">Email Address</label>                                      
                                 <EmailForm />
                             <div className="error-message-box">
                                 <div className="email-error-message"></div>       

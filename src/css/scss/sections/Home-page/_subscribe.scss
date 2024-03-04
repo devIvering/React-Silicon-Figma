@@ -26,6 +26,19 @@
 
         .subscribe-box {
             margin-top: 50px;
+
+            form {
+                position: relative;
+            }
+
+            .form-and-button {
+
+                button {
+                   position: absolute;
+                   right: 205px;
+                   margin-top: 3px;
+                }
+            }
         }
 
         
@@ -36,38 +49,6 @@
 
         button {
             border-radius: 0 10px 10px 0;
-        }
-
-        .subscribe-popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 20px;
-            border: 2px solid #333;
-            z-index: 1000;
-            background-color: $gray-200;
-        }
-        
-        .popup-content {
-            text-align: center;
-        }
-        
-        @keyframes fadeInOut {
-            0% {
-                opacity: 0;
-            }
-            25% {
-                opacity: 1;
-            }
-            75% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-            }
         }
     }
 }

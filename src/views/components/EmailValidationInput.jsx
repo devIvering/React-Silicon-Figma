@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailIcon from '../../images/icons/Vector_grey.svg'
 
 function EmailForm() {
   const [email, setEmail] = useState('');
@@ -20,16 +21,25 @@ function EmailForm() {
     validateEmail(value);
   };
 
+  const inputStyles = {
+    backgroundImage: `url(${emailIcon})`,
+    backgroundSize: '20px', 
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: '10px center', 
+  };
+
   return (
     <div id="form-email" className="input-group">
-      <label htmlFor="form-email">Email Address</label>
+      
       <input
         required
         onChange={(e) => handleEmailChange(e)}
+        placeholder='Your Email'
         name="email"
         type="email"
         value={email}
         className="form-email"
+        style={inputStyles}
       />
       <div className="error-message-box">
         <div className="email-error-message">{emailError}</div>

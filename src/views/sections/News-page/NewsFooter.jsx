@@ -1,5 +1,6 @@
 import React from 'react'
 import ArrowIcon from '../../../images/news-page/arrows.svg'
+import EmailForm from '../../components/EmailValidationInput'
 
 const NewsFooter = () => {
   return (
@@ -42,7 +43,9 @@ const NewsFooter = () => {
                 </div>
                 </div>
             <div className="subscribe-box">
-                    <input className="email" type="email" placeholder="Your email" />
+              <div>
+                    <EmailForm />
+              </div>
                     <button className="btn-theme">Subscribe *</button>
             </div>
             <div className="agree-box">

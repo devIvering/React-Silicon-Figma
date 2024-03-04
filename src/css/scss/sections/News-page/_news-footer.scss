@@ -27,11 +27,19 @@
                 label {
                     @include text-s;
                 }
+
+                .checkbox-item {
+                    
+                    label {
+                        margin: 0 10px 0 10px;
+                    }
+                }
             }
         }
 
         .subscribe-box {
             display: flex;
+            justify-content: space-between;
         }
 
     }
