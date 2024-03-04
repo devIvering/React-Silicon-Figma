@@ -88,7 +88,7 @@ const ContactUs = () => {
                         </div>
                         <div id="form-email" className="input-group">   
                         <label htmlFor="form-email">Email Address</label>                                      
-                                <EmailForm />
+                                <EmailForm showPlaceholder={false} showStyle={false}/>
                             <div className="error-message-box">
                                 <div className="email-error-message"></div>       
                             </div>

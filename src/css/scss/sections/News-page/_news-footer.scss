@@ -10,6 +10,11 @@
         padding: 40px;
         gap: 20px;
 
+        .subscribe-box {
+            display: flex;
+            justify-content: space-between;
+        }
+
         .footer-head {
             display: flex;
             gap: 30px;
@@ -36,12 +41,9 @@
                 }
             }
         }
-
-        .subscribe-box {
-            display: flex;
-            justify-content: space-between;
-        }
-
+        
+        
+    
     }
 
 

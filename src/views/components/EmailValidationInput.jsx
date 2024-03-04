@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import emailIcon from '../../images/icons/Vector_grey.svg'
 
-function EmailForm() {
+function EmailForm( {showPlaceholder, showStyle}) {
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState('');
 
@@ -34,12 +34,12 @@ function EmailForm() {
       <input
         required
         onChange={(e) => handleEmailChange(e)}
-        placeholder='Your Email'
         name="email"
         type="email"
         value={email}
         className="form-email"
-        style={inputStyles}
+        style={showStyle ? inputStyles : {}}
+        placeholder={showPlaceholder ? 'Your Email' : ''}
       />
       <div className="error-message-box">
         <div className="email-error-message">{emailError}</div>

@@ -18,7 +18,7 @@ const ContactFooter = () => {
              <div className="subscribe-box">
                 <div className="form-and-button">
                     <form onSubmit={handleSubmit} noValidate>
-                     <EmailValidationInput />
+                     <EmailValidationInput showPlaceholder={true} showStyle={true}/>
                  </form>
                     <button id="subscribe-button" className="btn-theme" >Subscribe</button>
                 </div>
