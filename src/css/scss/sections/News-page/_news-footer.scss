@@ -22,7 +22,7 @@
 
         .checkbox-holder {
             display: flex;
-            gap: 30px;
+            gap: 100px;
     
             .checkboxes {
                 display: grid;
@@ -41,9 +41,26 @@
                 }
             }
         }
+        .subscribe-box {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 15px;
+
+            button {
+                margin-top: 5px;
+            }
+
+            input {
+                width: 700px;
+            }
+        }
+
+        .agree-box {
+            margin-left: 20px;
+        }
         
         
-    
     }
 
 

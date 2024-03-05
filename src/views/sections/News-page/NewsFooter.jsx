@@ -1,6 +1,7 @@
 import React from 'react'
 import ArrowIcon from '../../../images/news-page/arrows.svg'
 import EmailForm from '../../components/EmailValidationInput'
+import { handleSubscribe } from '../../../js/script'
 
 const NewsFooter = () => {
   return (
@@ -43,10 +44,14 @@ const NewsFooter = () => {
                 </div>
                 </div>
             <div className="subscribe-box">
-              <div>
-                    <EmailForm />
-              </div>
+                <div>
+                </div>
+            <form onSubmit={handleSubscribe} noValidate>    
+                    <EmailForm showPlaceholder={true}showStyle={true}/>
+                    </form>
+                  <div>
                     <button className="btn-theme">Subscribe *</button>
+                  </div>
             </div>
             <div className="agree-box">
                 <p>* Yes, I agree to the <a href="#">terms</a> and <a href="">privacy policy</a>.</p>

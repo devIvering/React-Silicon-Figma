@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import SiliconLogo from '../../../images/logo/silicon-logo-dark_theme.svg'
 import EmailValidationInput from '../../components/EmailValidationInput'
-import { handleSubmit } from '../../../js/script'
+import { handleSubscribe } from '../../../js/script'
 
 const ContactFooter = () => {
   return (
@@ -17,8 +17,8 @@ const ContactFooter = () => {
              <h6>Subscribe to our newsletter</h6>
              <div className="subscribe-box">
                 <div className="form-and-button">
-                    <form onSubmit={handleSubmit} noValidate>
-                     <EmailValidationInput showPlaceholder={true} showStyle={true}/>
+                    <form onSubmit={handleSubscribe} noValidate>    
+                     <EmailValidationInput showPlaceholder={true}showStyle={true}/>
                  </form>
                     <button id="subscribe-button" className="btn-theme" >Subscribe</button>
                 </div>

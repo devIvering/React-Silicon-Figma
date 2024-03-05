@@ -8,7 +8,7 @@ import GroupIcon  from '../../../images/icons/add-group.svg'
 import DropDownButton from '../../components/DropDownButton'
 import EmailForm from '../../components/EmailValidationInput'
 import NameValidationInput from '../../components/NameValidationInput'
-import { handleSubmit } from '../../../js/script'
+import { handleSubscribe } from '../../../js/script'
 
 
 const ContactUs = () => {
@@ -77,7 +77,7 @@ const ContactUs = () => {
         </div>
         <section id="online-form">
             <div className="container">
-            <form onSubmit={(e) => handleSubmit(e)} noValidate>
+            <form onSubmit={(e) => handleSubscribe(e)} noValidate>
                     <h1>Get Online Consultation</h1>
                     <div className="content">
                         <div id="form-fullname" className="input-group">

@@ -9,13 +9,15 @@
         }
         
         @include lg {
-            grid-template-columns: repeat(3, 1fr) !important;
+            grid-template-columns: repeat(3, 1fr);
         }
 
     
         .news-card {
             position: relative;
             border-radius: 8px;
+            @include shadow-l;
+            background-color: white;
 
             .news-image {
                 border-radius: 10px 10px 0 0;

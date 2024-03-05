@@ -1,5 +1,4 @@
 
-
 .contact-header {
     background-color: $gray-100;
 }
@@ -20,7 +19,7 @@
     background-color: $gray-100;
     
     .container {
-        display: grid;
+        display: flex;
         gap: 5rem;
         height: 100%;
 
@@ -29,13 +28,13 @@
         }
 
         h1 {
-            margin: 2rem 0 1rem 0;
-            @include h2;
+            margin-top: 20px;
+            @include h1;
         }
 
         .contact-us-box {
             display: grid;
-            gap: 50px;
+            flex: 1;
 
             .email-us {
                 display: flex;
@@ -46,6 +45,11 @@
                 display: flex;
                 gap: 20px;
             }
+
+           .envelope-image,.careers-image {
+            margin-top: 20px;
+            margin-right: 20px;
+           }
 
         }
 
@@ -60,12 +64,14 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                margin-top: 80px;
+                flex: 2;
             }
         
             form {
                 
                 @include md {
-                    padding: 0;
+                    padding: 0 20px 0 20px;
                 }
 
                 #form-email, #form-specialist, #form-fullname {

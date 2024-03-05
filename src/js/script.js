@@ -16,16 +16,15 @@ export const toggleMenu = () => {
 
 
 
-export async function handleSubmit(e) {
+export async function handleSubscribe(e) {
     e.preventDefault();
 
     const formData = {
-        name: e.target.elements.name.value,
-        email: e.target.elements.email.value,
+        email: e.target.elements.email.value
     };
 
     try {
-        const response = await fetch('https://kyhnet23-assignment.azurewebsites.net/api/book-appointment', {
+        const response = await fetch('https://kyhnet23-assignment.azurewebsites.net/api/subscribe', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
