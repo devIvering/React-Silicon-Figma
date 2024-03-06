@@ -4,7 +4,7 @@ const ItemBox = ({ item }) => {
   return (
       <div className="card-container">
         <div className="news-card">
-        <button className="btn-save"><i class="fa-regular fa-bookmark"></i></button>
+        <button className="btn-save"><i className="fa-regular fa-bookmark"></i></button>
           <img className="news-image" src={item.imageUrl} alt={item.title} />
         <div className="content">
           <div className="news-category">

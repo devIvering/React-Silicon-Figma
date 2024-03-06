@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import emailIcon from '../../images/icons/Vector_grey.svg'
+import emailIcon from '../../images/icons/Vector_grey.svg';
 
-function EmailForm( {showPlaceholder, showStyle}) {
+function EmailForm({ showPlaceholder, showStyle, onChange }) {
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState('');
 
@@ -19,18 +19,20 @@ function EmailForm( {showPlaceholder, showStyle}) {
     const { value } = e.target;
     setEmail(value);
     validateEmail(value);
+    if (onChange) {
+      onChange(value);
+    }
   };
 
   const inputStyles = {
     backgroundImage: `url(${emailIcon})`,
-    backgroundSize: '20px', 
+    backgroundSize: '20px',
     backgroundRepeat: 'no-repeat',
-    backgroundPosition: '10px center', 
+    backgroundPosition: '10px center',
   };
 
   return (
     <div id="form-email" className="input-group">
-      
       <input
         required
         onChange={(e) => handleEmailChange(e)}

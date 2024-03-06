@@ -4,7 +4,6 @@
     flex-direction: column;
     align-items: center;
     gap: 40px;
-    padding: 40px;
     
     
     .footer-nav {
@@ -28,8 +27,10 @@
     }
 
     .bottom-text {
-        width: 75%;
+        width:60%;
+        margin-top: 30px;
         text-align: center;
+        @include text-s;
         color: $gray-600;
     }
 }

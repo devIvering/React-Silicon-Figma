@@ -3,7 +3,7 @@
 
     .container {
         display: none;
-        gap: 10px;
+        gap: 15px;
         
         @include md {
             display: grid;
@@ -18,7 +18,7 @@
                 @include shadow-l;
 
             }
-            padding: 40px 0;
+            padding: 30px;
         }
     }
 }
