@@ -1,14 +1,18 @@
 #subscribe-section {
     background: $gray-100;
-    margin: 100px;
     border-radius: 10px;
+    padding: 30px;
+
+    @include lg {
+        margin: 0 150px 0 150px;
+    }
 
     .container {
 
         @include lg {
+            margin-top: 40px;
             display: flex;
             gap: 50px;
-            padding: 4rem;
             align-items: center;
             justify-content: space-between;
 
@@ -17,11 +21,14 @@
         .notify-box, .subscribe-box {
             display: flex;
             flex: 1 1;
-            margin-bottom: 25px;
         }
 
         .notify-box {
-            gap: 30px;
+            gap: 80px;
+
+            @include lg {
+                gap: 30px;
+            }
         }
 
         .subscribe-box {
@@ -29,19 +36,16 @@
 
             form {
                 position: relative;
-            }
+                
+                @include md {
+                    left: 50px;
+                }
 
-            .form-and-button {
-
-                button {
-                   position: absolute;
-                   right: 205px;
-                   margin-top: 3px;
+                @include lg {
+                    left: 0;
                 }
             }
         }
-
-        
 
         h1 {
             @include h4;
@@ -52,3 +56,9 @@
         }
     }
 }
+
+#subscribe-button {
+    position: absolute;
+    left: 395px;
+    margin-top: 3px;
+ }

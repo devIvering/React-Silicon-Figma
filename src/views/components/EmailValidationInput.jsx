@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import emailIcon from '../../images/icons/Vector_grey.svg';
 
-function EmailForm({ showPlaceholder, showStyle, onChange }) {
+function EmailForm({ showPlaceholder, showStyle, onSubscribe }) {
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState('');
 
@@ -19,8 +19,19 @@ function EmailForm({ showPlaceholder, showStyle, onChange }) {
     const { value } = e.target;
     setEmail(value);
     validateEmail(value);
-    if (onChange) {
-      onChange(value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!email || emailError) {
+      console.error('Invalid email. Please correct the errors.');
+      return;
+    }
+
+    // Call the parent component's subscribe function with the email
+    if (onSubscribe) {
+      onSubscribe(email);
     }
   };
 
@@ -33,19 +44,22 @@ function EmailForm({ showPlaceholder, showStyle, onChange }) {
 
   return (
     <div id="form-email" className="input-group">
-      <input
-        required
-        onChange={(e) => handleEmailChange(e)}
-        name="email"
-        type="email"
-        value={email}
-        className="form-email"
-        style={showStyle ? inputStyles : {}}
-        placeholder={showPlaceholder ? 'Your Email' : ''}
-      />
-      <div className="error-message-box">
-        <div className="email-error-message">{emailError}</div>
-      </div>
+      <form onSubmit={handleSubmit} noValidate>
+        <input
+          required
+          onChange={(e) => handleEmailChange(e)}
+          name="email"
+          type="email"
+          value={email}
+          className="form-email"
+          style={showStyle ? inputStyles : {}}
+          placeholder={showPlaceholder ? 'Your Email' : ''}
+        />
+        <div className="error-message-box">
+          <div className="email-error-message">{emailError}</div>
+        </div>
+        <button id="subscribe-button" className="btn-theme" >Subscribe</button>
+      </form>
     </div>
   );
 }

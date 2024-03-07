@@ -102,6 +102,11 @@
                 text-align: left;
                 width: 520px;
 
+                @include md {
+                    width: 700px;
+                }
+
+
                 @include lg {
                     width: 600px;
                 }

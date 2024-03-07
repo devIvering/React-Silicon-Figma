@@ -4,20 +4,7 @@ import EmailForm from '../../components/EmailValidationInput';
 
 
 const NewsFooter = () => {
-  const [email, setEmail] = useState('');
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-  
-    if (!email) {
-      console.error('Email cannot be empty.');
-      return;
-    }
-  
+  const handleSubscribe = async (email) => {
     try {
       const response = await fetch('https://kyhnet23-assignment.azurewebsites.net/api/subscribe', {
         method: 'POST',
@@ -26,7 +13,7 @@ const NewsFooter = () => {
         },
         body: JSON.stringify({ email }),
       });
-  
+
       if (response.ok) {
         console.log('Subscription successful!');
       } else {
@@ -76,22 +63,19 @@ const NewsFooter = () => {
                         <input type="checkbox" />
                         <label forhtml="checkbox6">Podcasts</label>
                       </div>
-                </div>
-                </div>
-            <div className="subscribe-box">
-            <form onSubmit={handleSubmit} noValidate>
-       <EmailForm />
-        <button type="submit">Subscribe</button>
-      </form>
-            </div>
-            <div className="agree-box">
-                <p>* Yes, I agree to the <a href="#">terms</a> and <a href="">privacy policy</a>.</p>
-            </div>
+                      </div>
+          </div>
+          <div className="subscribe-box">
+            <EmailForm onSubscribe={handleSubscribe} />
+          </div>
+          <div className="agree-box">
+            <p>
+              * Yes, I agree to the <a href="#">terms</a> and <a href="">privacy policy</a>.
+            </p>
+          </div>
         </div>
-            
-
-    </section>
-   </footer>
+      </section>
+    </footer>
   )
 }
 

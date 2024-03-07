@@ -17,7 +17,6 @@ const Subscribe = () => {
                             <form onSubmit={handleSubscribe} noValidate>
                            <EmailForm showPlaceholder={true}showStyle={true}/>
                          </form>
-                            <button id="subscribe-button" className="btn-theme" >Subscribe</button>
                         </div>
                             <div className="error-message-box">
                                 <div className="email-error-message" id="email-error-message"></div>       

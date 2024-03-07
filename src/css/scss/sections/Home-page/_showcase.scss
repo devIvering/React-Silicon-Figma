@@ -28,7 +28,7 @@
             text-align: center;
             padding: 20px;
 
-            @include lg {
+            @include md {
                 text-align: left;
                 display: grid;
                 grid-template-rows: auto auto 1fr auto;
