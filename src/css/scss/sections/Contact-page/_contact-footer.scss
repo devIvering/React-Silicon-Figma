@@ -7,14 +7,21 @@
     
     .container {
         display: flex;
-        justify-content: space-between;
-        padding: 90px;
-        gap: 120px;
+        flex-direction: column;
+        padding: 20px; 
+        gap: 20px; 
+
+        @include xl {
+            justify-content: space-between;
+            flex-direction: row;
+            padding: 50px 0 10px 0;
+            gap: 120px;
+        }
         
         #newsletter-box {
             display: grid;
             flex: 1;
-            gap: 10px;
+            gap: 30px;
 
             .subscribe-box {
                 
@@ -38,8 +45,8 @@
             }
 
             h6 {
-                margin-top: 20px;
                 color: white;
+                margin-bottom: -20px;
             }
 
             .footer-text {
@@ -51,6 +58,7 @@
             display: flex;
             flex: 1;
             justify-content: space-between;
+            gap: 60px;
 
             .first-links-box {
                 display: flex;

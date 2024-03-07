@@ -3,7 +3,11 @@ import { NavLink, Link } from 'react-router-dom'
 import Logo from '../../images/logo/silicon-logo-light_theme.svg'
 import { toggleMenu } from '../../js/script'
 
+
+
+
 const Header = () => {
+
   return (
     <header>
       <div className="container">

@@ -14,7 +14,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
       <div className="wrapper">
-        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<Error />} />

@@ -36,7 +36,8 @@
 
             form {
                 position: relative;
-                
+
+
                 @include md {
                     left: 50px;
                 }
@@ -57,7 +58,7 @@
     }
 }
 
-#subscribe-button {
+#home-subscribe-button {
     position: absolute;
     left: 395px;
     margin-top: 3px;

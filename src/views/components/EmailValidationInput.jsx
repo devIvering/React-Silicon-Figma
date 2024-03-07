@@ -29,7 +29,6 @@ function EmailForm({ showPlaceholder, showStyle, onSubscribe }) {
       return;
     }
 
-    // Call the parent component's subscribe function with the email
     if (onSubscribe) {
       onSubscribe(email);
     }
@@ -44,7 +43,6 @@ function EmailForm({ showPlaceholder, showStyle, onSubscribe }) {
 
   return (
     <div id="form-email" className="input-group">
-      <form onSubmit={handleSubmit} noValidate>
         <input
           required
           onChange={(e) => handleEmailChange(e)}
@@ -58,8 +56,7 @@ function EmailForm({ showPlaceholder, showStyle, onSubscribe }) {
         <div className="error-message-box">
           <div className="email-error-message">{emailError}</div>
         </div>
-        <button id="subscribe-button" className="btn-theme" >Subscribe</button>
-      </form>
+        
     </div>
   );
 }

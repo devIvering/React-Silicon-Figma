@@ -66,8 +66,11 @@ const NewsFooter = () => {
                       </div>
           </div>
           <div className="subscribe-box">
-            <EmailForm onSubscribe={handleSubscribe} />
-          </div>
+            <form onSubmit={handleSubscribe} noValidate>    
+                     <EmailForm showPlaceholder={true}showStyle={true}/>
+                    <button className="btn-theme" >Subscribe</button>
+                 </form>
+            </div>
           <div className="agree-box">
             <p>
               * Yes, I agree to the <a href="#">terms</a> and <a href="">privacy policy</a>.
