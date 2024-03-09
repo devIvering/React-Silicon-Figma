@@ -6,8 +6,9 @@ import EnvelopeIcon from '../../../images/icons/icon_envelope.svg'
 import BlueArrow from '../../../images/icons/Vector_bluearrow.svg'
 import GroupIcon  from '../../../images/icons/icon_career.svg'
 import DropDownButton from '../../components/DropDownButton'
-import EmailForm from '../../components/EmailValidationInput'
 import NameValidationInput from '../../components/NameValidationInput'
+import { UseAppStore } from '../../../contexts/AppState';
+import useEmailValidation from './../../../js/emailValidation';
 
 
 const ContactUs = () => {
@@ -33,6 +34,33 @@ const ContactUs = () => {
             loaded.current = true
         }
     }, [])
+
+    const { handleSubscribe } = UseAppStore();
+    const {
+      email,
+      setEmail,
+      emailError,
+      handleEmailChange,
+      validateEmail,
+    } = useEmailValidation();
+    const [result, setResult] = useState();
+  
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+  
+      validateEmail(email);
+  
+      if (!email || emailError) {
+        console.error('Invalid email. Please correct the errors.');
+        return;
+      }
+  
+      const result = await handleSubscribe(email);
+      setResult(result);
+  
+      if (result === 200) window.alert('You are now subscribed!');
+      if (result === 400) window.alert('Failed');
+    };
 
   return (
     <section id="contact-us">
@@ -76,7 +104,7 @@ const ContactUs = () => {
         </div>
         <section id="online-form">
             <div className="container">
-            <form noValidate>
+            <form onSubmit={handleSubmit} noValidate>
                     <h1>Get Online Consultation</h1>
                     <div className="content">
                         <div id="form-fullname" className="input-group">
@@ -87,9 +115,10 @@ const ContactUs = () => {
                         </div>
                         <div id="form-email" className="input-group">   
                         <label htmlFor="form-email">Email Address</label>                                      
-                                <EmailForm showPlaceholder={false} showStyle={false}/>
-                            <div className="error-message-box">
-                                <div className="email-error-message"></div>       
+                        <input value={email} onChange={(e) => handleEmailChange(e.target.value)} />
+                        <div className="error-message-box">
+                            <div className="email-error-message" id="email-error-message">
+                                {emailError}
                             </div>
                         </div>
                         <div id="form-specialist" className="input-group">
@@ -110,6 +139,7 @@ const ContactUs = () => {
                             <input required id="time" type="time" />
                         </div>                   
                         <button className="btn btn-theme" type="submit">Make an appointment</button>
+                    </div>
                     </div>
                 </form>
             </div>

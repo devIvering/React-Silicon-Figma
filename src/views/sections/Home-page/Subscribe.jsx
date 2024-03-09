@@ -41,10 +41,12 @@ const Subscribe = () => {
         <div className="subscribe-box">
           <div className="form-and-button">
             <form onSubmit={handleSubmit} noValidate>
-              <input value={email} onChange={(e) => handleEmailChange(e.target.value)} />
-              <button type="submit" id="home-subscribe-button" className="btn-theme">
-                Subscribe
-              </button>
+                <div className="input-group">   
+                    <input value={email} onChange={(e) => handleEmailChange(e.target.value)} />
+                    <button type="submit" id="home-subscribe-button" className="btn-theme">
+                        Subscribe
+                    </button>
+                </div>
             </form>
           </div>
           <div className="error-message-box">
