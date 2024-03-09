@@ -21,32 +21,3 @@ export const toggleMenu = () => {
 };
 
 
-
-
-
-export async function handleSubscribe(e) {
-    e.preventDefault();
-
-    const formData = {
-        email: e.target.elements.email.value
-    };
-
-    try {
-        const response = await fetch('https://kyhnet23-assignment.azurewebsites.net/api/subscribe', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-        });
-
-        if (response.ok) {
-            const data = await response.json();
-            console.log('API response:', data);
-        } else {
-            console.log('API request failed:', response.status);
-        }
-    } catch (error) {
-        console.error('Error during API request:', error);
-    }
-}

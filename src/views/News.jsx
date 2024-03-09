@@ -4,7 +4,7 @@ import NewsFooter from '../views/sections/News-page/NewsFooter'
 import { NavLink } from 'react-router-dom'
 import HomeIcon from '../images/icons/bx-home-alt.svg'
 import RightChevron from '../images/icons/bx-chevrons-right.svg'
-import Header from './sections/Header';
+import ContactFooter from './sections/Contact-page/ContactFooter'
 
 const News = () => {
   const [news, setNews] = useState([]);
@@ -29,7 +29,6 @@ const News = () => {
 
   return (
     <>
-    <Header />
     <div className="contact-link">
         <img src={HomeIcon} alt="Home-icon" />
         <NavLink to="/">Home</NavLink>
@@ -46,6 +45,7 @@ const News = () => {
     </div>
     <div>
       <NewsFooter />
+      <ContactFooter />
     </div>
     </>
   );

@@ -2,12 +2,10 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import ErrorImage from '../images/error-page/404.svg'
 import HomeIcon from '../images/error-page/icon-l.svg'
-import Header from './sections/Header'
 
 const Error = () => {
   return (
     <section>
-         <Header />
         <div className="error-container">
         <div className="error-image">
             <img src={ErrorImage} alt="Error message" />

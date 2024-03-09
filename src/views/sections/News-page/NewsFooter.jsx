@@ -1,30 +1,36 @@
 import React, { useState } from 'react'
 import ArrowIcon from '../../../images/news-page/arrows.svg'
-import EmailForm from '../../components/EmailValidationInput';
+import { UseAppStore } from '../../../contexts/AppState'
+import useEmailValidation from './../../../js/emailValidation';
 
 
 const NewsFooter = () => {
-  const handleSubscribe = async (email) => {
-    try {
-      const response = await fetch('https://kyhnet23-assignment.azurewebsites.net/api/subscribe', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-      });
+  const { handleSubscribe } = UseAppStore();
+  const {
+    email,
+    setEmail,
+    emailError,
+    handleEmailChange,
+    validateEmail,
+  } = useEmailValidation();
+  const [result, setResult] = useState();
 
-      if (response.ok) {
-        console.log('Subscription successful!');
-      } else {
-        const errorData = await response.json();
-        console.error('Subscription failed:', errorData);
-      }
-    } catch (error) {
-      console.error(`An error occurred while subscribing: ${error}`);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    validateEmail(email);
+
+    if (!email || emailError) {
+      console.error('Invalid email. Please correct the errors.');
+      return;
     }
+
+    const result = await handleSubscribe(email);
+    setResult(result);
+
+    if (result === 200) window.alert('You are now subscribed!');
+    if (result === 400) window.alert('Failed');
   };
-  
 
   return (
     <footer>
@@ -66,10 +72,17 @@ const NewsFooter = () => {
                       </div>
           </div>
           <div className="subscribe-box">
-            <form onSubmit={handleSubscribe} noValidate>    
-                     <EmailForm showPlaceholder={true}showStyle={true}/>
-                    <button className="btn-theme" >Subscribe</button>
-                 </form>
+          <form onSubmit={handleSubmit} noValidate>
+              <input value={email} onChange={(e) => handleEmailChange(e.target.value)} />
+              <button type="submit" id="home-subscribe-button" className="btn-theme">
+                Subscribe
+              </button>
+            </form>
+            <div className="error-message-box">
+            <div className="email-error-message" id="email-error-message">
+              {emailError}
+            </div>
+          </div>
             </div>
           <div className="agree-box">
             <p>

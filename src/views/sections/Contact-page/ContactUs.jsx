@@ -8,7 +8,6 @@ import GroupIcon  from '../../../images/icons/icon_career.svg'
 import DropDownButton from '../../components/DropDownButton'
 import EmailForm from '../../components/EmailValidationInput'
 import NameValidationInput from '../../components/NameValidationInput'
-import { handleSubscribe } from '../../../js/script'
 
 
 const ContactUs = () => {
@@ -77,7 +76,7 @@ const ContactUs = () => {
         </div>
         <section id="online-form">
             <div className="container">
-            <form onSubmit={(e) => handleSubscribe(e)} noValidate>
+            <form noValidate>
                     <h1>Get Online Consultation</h1>
                     <div className="content">
                         <div id="form-fullname" className="input-group">

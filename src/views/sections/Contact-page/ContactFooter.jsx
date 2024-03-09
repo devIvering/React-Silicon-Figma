@@ -1,10 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom'
 import SiliconLogo from '../../../images/logo/silicon-logo-dark_theme.svg'
-import EmailValidationInput from '../../components/EmailValidationInput'
-import { handleSubscribe } from '../../../js/script'
+import { UseAppStore } from '../../../contexts/AppState';
+import useEmailValidation from './../../../js/emailValidation';
+
 
 const ContactFooter = () => {
+
+        const { handleSubscribe } = UseAppStore();
+        const {
+          email,
+          setEmail,
+          emailError,
+          handleEmailChange,
+          validateEmail,
+        } = useEmailValidation();
+        const [result, setResult] = useState();
+      
+        const handleSubmit = async (e) => {
+          e.preventDefault();
+      
+          validateEmail(email);
+      
+          if (!email || emailError) {
+            console.error('Invalid email. Please correct the errors.');
+            return;
+          }
+      
+          const result = await handleSubscribe(email);
+          setResult(result);
+      
+          if (result === 200) window.alert('You are now subscribed!');
+          if (result === 400) window.alert('Failed');
+        };
+
   return (
     <section id="contact-footer">
     <div className="container">
@@ -17,14 +46,18 @@ const ContactFooter = () => {
              <h6>Subscribe to our newsletter</h6>
              <div className="subscribe-box">
                 <div className="form-and-button">
-                    <form onSubmit={handleSubscribe} noValidate>    
-                     <EmailValidationInput showPlaceholder={true}showStyle={true}/>
-                 </form>
-                    <button id="subscribe-button" className="btn-theme" >Subscribe</button>
+                <form onSubmit={handleSubmit} noValidate>
+              <input value={email} onChange={(e) => handleEmailChange(e.target.value)} />
+              <button type="submit" id="home-subscribe-button" className="btn-theme">
+                Subscribe
+              </button>
+            </form>
                 </div>
-                    <div className="error-message-box">
-                        <div className="email-error-message" id="email-error-message"></div>       
-                    </div>
+                <div className="error-message-box">
+            <div className="email-error-message" id="email-error-message">
+              {emailError}
+            </div>
+          </div>
                 </div>
                 <p className="footer-text">2024. All rights reserved. Silicon Template</p>
         </div>
@@ -79,7 +112,8 @@ const ContactFooter = () => {
                 </div>
             </div>       
 </section>
-  )
-}
+  );
+};
 
-export default ContactFooter
+
+export default ContactFooter;

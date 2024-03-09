@@ -8,12 +8,10 @@ import Review from './sections/Home-page/Review'
 import Faq from './sections/Home-page/Faq'
 import Subscribe from './sections/Home-page/Subscribe'
 import HomeFooter from './sections/Home-page/HomeFooter'
-import Header from './sections/Header'
 
 const Home = () => {
   return (
     <main>
-      <Header />
       <Showcase />
       <Brands />
       <Features />
