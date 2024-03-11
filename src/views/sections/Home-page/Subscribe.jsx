@@ -42,7 +42,7 @@ const Subscribe = () => {
           <div className="form-and-button">
             <form onSubmit={handleSubmit} noValidate>
                 <div className="input-group">   
-                    <input value={email} onChange={(e) => handleEmailChange(e.target.value)} />
+                    <input placeholder='Your Email' value={email} onChange={(e) => handleEmailChange(e.target.value)} />
                     <button type="submit" id="home-subscribe-button" className="btn-theme">
                         Subscribe
                     </button>

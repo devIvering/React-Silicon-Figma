@@ -45,16 +45,14 @@ const ContactFooter = () => {
              </p>
              <h6>Subscribe to our newsletter</h6>
              <div className="subscribe-box">
-                <div className="form-and-button">
                 <form onSubmit={handleSubmit} noValidate>
                 <div className="input-group">  
-              <input value={email} onChange={(e) => handleEmailChange(e.target.value)} />
+              <input placeholder='Your Email'value={email} onChange={(e) => handleEmailChange(e.target.value)} />
               <button type="submit" id="home-subscribe-button" className="btn-theme">
                 Subscribe
               </button>
              </div>
             </form>
-                </div>
                 <div className="error-message-box">
             <div className="email-error-message" id="email-error-message">
               {emailError}

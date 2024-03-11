@@ -10,9 +10,29 @@
         padding: 40px;
         gap: 20px;
 
+
         .subscribe-box {
             display: flex;
+            margin-top: 30px;
             justify-content: space-between;
+
+            input {
+                width: 700px;
+            }
+
+            button {
+                margin-left: 420px;
+            }
+
+            button, input {
+                border-radius: 10px;
+            }
+        }
+        
+        .input-group {
+            display: flex;
+            gap: 10px;
+            align-items: center; 
         }
 
         .footer-head {
@@ -42,10 +62,6 @@
             }
         }
 
-        .agree-box {
-            margin-left: 20px;
-        }
-        
         
     }
 

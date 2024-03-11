@@ -6,7 +6,6 @@ form {
 
     .input-group {
 
-
         label {
             width: 100%;
             font-weight: 700;
@@ -15,10 +14,11 @@ form {
         
         input {
             width: 100%;
-            padding: 15px;
-            border-radius: 8px !important;
+            padding: 9px;
+            border-radius: 8px 0 0 8px;
             border: 1px solid $gray-500;
         }
+
     }
 
     .checkbox-group {

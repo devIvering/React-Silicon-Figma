@@ -8,11 +8,8 @@
     .container {
         display: flex;
         flex-direction: column;
-        padding: 20px; 
-        gap: 20px; 
 
         @include xl {
-            justify-content: space-between;
             flex-direction: row;
             padding: 50px 0 10px 0;
             gap: 120px;
@@ -21,21 +18,26 @@
         #newsletter-box {
             display: grid;
             flex: 1;
+            margin-left: 150px;
+            margin-right: 150px;
             gap: 30px;
 
             .subscribe-box {
-                
-                input {
-                    background-color: rgb(17, 16, 16);
-                    color: white;
-                    border: 1px thin lightgrey;
-                    opacity: 0.7;   
-                }
 
-                button {
-                    border-radius: 0 10px 10px 0;
-                    height: 48px;
-                }
+                    input {
+                        background-color: rgb(17, 16, 16);
+                        color: white;
+                        border: 1px thin lightgrey;
+                        opacity: 0.7;   
+                        width: 66%;
+                    }
+    
+                    button {
+                        border-radius: 0 10px 10px 0;
+                        height: 48px;
+                    }
+                
+                
             }
 
             p {
@@ -58,7 +60,7 @@
             display: flex;
             flex: 1;
             justify-content: space-between;
-            gap: 60px;
+            gap: 40px;
 
             .first-links-box {
                 display: flex;

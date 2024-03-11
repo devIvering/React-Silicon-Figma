@@ -44,7 +44,7 @@
                 gap: 20px;
             }
 
-           .envelope-image,.careers-image {
+           .envelope-image, .careers-image {
             margin-top: 20px;
             margin-right: 20px;
            }
@@ -68,34 +68,56 @@
         
             form {
                 
+                input {
+                    border-radius: 10px;
+                    padding: 15px;
+                }
+
                 @include md {
                     padding: 0 20px 0 20px;
                 }
 
                 #form-email, #form-specialist, #form-fullname {
                     display: flex;
+                    margin-top: 10px;
                     flex-direction: column;
 
                     .error-message-box {
                         color: red;
                     }
                 }
+
+                #form-date-time {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 20px;
+
+                    input {
+                        width: 100%;
+                    }
+                }
+
+                #form-date, #form-time {
+                    flex: 1;
+                    margin-top: 10px;
+                }
         
                 .content {
                     display: grid;
-                    gap: 10px;
                     grid-template-columns: 1fr;
                     grid-template-areas:    "fullname"
                                             "email"
                                             "specialist"
                                             "date"
-                                            "time";
+                                            "time"
+                                            "button";
                     @include lg {
                         grid-template-columns: 1fr 1fr;
                         grid-template-areas:    "fullname fullname"
                                                 "email email"
                                                 "specialist specialist"
-                                                "date time";
+                                                "date time"
+                                                "button button";
                                                 
                     }
         
@@ -107,7 +129,11 @@
 
                     button {
                         padding: 15px;
-                        margin-top: 20px;
+                        margin-top: 30px;
+                        grid-area: button;
+                        border-radius: 10px;
+                        @include shadow-m;
+                        width: 48%;
                     }
                 }
             }
