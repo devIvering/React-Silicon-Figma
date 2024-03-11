@@ -14,14 +14,12 @@ const ContactUs = () => {
 
   const {
     email,
-    setEmail,
     emailError,
     handleEmailChange,
     validateEmail,
   } = useEmailValidation();
   const [fullname, setfullname] = useState('');
-  const [specialists, setSpecialists] = useState([]);
-  const [specialist, setSpecialist] = useState('');
+  const [specialist, setSpecialist] = useState([]);
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [result, setResult] = useState();
@@ -29,7 +27,7 @@ const ContactUs = () => {
 
   useEffect(() => {
     if (!loaded.current) {
-      setSpecialists([]);
+      setSpecialist([]);
 
       const fetchData = async () => {
         try {
@@ -37,7 +35,7 @@ const ContactUs = () => {
           const data = await response.json();
 
           for (let item of data) {
-            setSpecialists((current) => [...current, { value: item.id, text: `${item.firstName} ${item.lastName}` }]);
+            setSpecialist((current) => [...current, { value: item.id, text: `${item.firstName} ${item.lastName}` }]);
           }
         } catch (error) {
           console.error('Error fetching specialists:', error);
@@ -63,29 +61,28 @@ const ContactUs = () => {
   };
 
   const handleBookAppointment = async (appointmentData) => {
-    const apiUrl = 'https://kyhnet23-assignment.azurewebsites.net/api/book-appointment';
-
-    try {
-      const response = await fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(appointmentData),
-      });
-
-      const result = await response.json();
-
-      if (response.ok) {
-        return 200;
-      }
-
-      return result.message || 'An error occurred.';
-    } catch (error) {
-      console.error('Error making API call:', error);
-      return 'An error occurred.';
-    }
-  };
+   const apiUrl = 'https://kyhnet23-assignment.azurewebsites.net/api/book-appointment';
+ 
+   try {
+     const response = await fetch(apiUrl, {
+       method: 'POST',
+       headers: {
+         'Content-Type': 'application/json'
+       },
+       body: JSON.stringify(appointmentData),
+     });
+ 
+     if (!response.ok) {
+       const result = await response.json();
+       return result.message || 'An error occurred.';
+     }
+ 
+     return 200;
+   } catch (error) {
+     console.error('Error making API call:', error);
+     return 'An error occurred.';
+   }
+ };
 
   const validateName = (fullname) => {
      if (fullname.length === 0) {
@@ -108,10 +105,12 @@ const ContactUs = () => {
       return;
     }
 
+    const selectedSpecialist = specialist[0].value;
+
     const appointmentData = {
       fullname,
       email,
-      specialist,
+      specialist: selectedSpecialist,
       date,
       time,
     };
@@ -205,7 +204,7 @@ const ContactUs = () => {
                      <div id="form-specialist" className="input-group">
                         <label htmlFor="form-specialist-">Specialists</label>
                         <div className="dropdown-container">
-                           <DropDownButton value={specialists} options={specialists} />
+                           <DropDownButton value={specialist.current} options={specialist} />
                         </div>
                         <div className="error-message-box">
                            <div className="name-error-message"></div>

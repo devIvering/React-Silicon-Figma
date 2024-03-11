@@ -12,7 +12,7 @@
         @include xl {
             flex-direction: row;
             padding: 50px 0 10px 0;
-            gap: 120px;
+            gap: 10px;
         }
         
         #newsletter-box {
@@ -60,7 +60,6 @@
             display: flex;
             flex: 1;
             justify-content: space-between;
-            gap: 40px;
 
             .first-links-box {
                 display: flex;
