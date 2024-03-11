@@ -124,7 +124,7 @@ const ContactUs = () => {
       if (result === 200) {
         openPopup('Your appointment was booked!');
       } else {
-        openPopup('Failed');
+        openPopup('Booking failed');
       }
     } catch (error) {
       console.error('Error booking appointment:', error);

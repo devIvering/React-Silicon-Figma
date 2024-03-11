@@ -42,7 +42,7 @@ const Subscribe = () => {
     if (result === 200) {
       openPopup('You are now subscribed!');
     } else if (result === 400) {
-      openPopup('Failed');
+      openPopup('Subscription failed');
     }
   };
 
