@@ -7,32 +7,47 @@ import useEmailValidation from './../../../js/emailValidation';
 
 const ContactFooter = () => {
 
-        const { handleSubscribe } = UseAppStore();
-        const {
-          email,
-          setEmail,
-          emailError,
-          handleEmailChange,
-          validateEmail,
-        } = useEmailValidation();
-        const [result, setResult] = useState();
-      
-        const handleSubmit = async (e) => {
-          e.preventDefault();
-      
-          validateEmail(email);
-      
-          if (!email || emailError) {
-            console.error('Invalid email. Please correct the errors.');
-            return;
-          }
-      
-          const result = await handleSubscribe(email);
-          setResult(result);
-      
-          if (result === 200) window.alert('You are now subscribed!');
-          if (result === 400) window.alert('Failed');
-        };
+    const { handleSubscribe } = UseAppStore();
+    const {
+      email,
+      setEmail,
+      emailError,
+      handleEmailChange,
+      validateEmail,
+    } = useEmailValidation();
+    const [result, setResult] = useState();
+    const [isPopupOpen, setPopupOpen] = useState(false);
+  
+    const openPopup = (message) => {
+      setResult(message);
+      setPopupOpen(true);
+    };
+  
+    const closePopup = () => {
+      setPopupOpen(false);
+    };
+  
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+  
+      validateEmail(email);
+  
+      if (!email || emailError) {
+        console.error('Invalid email. Please correct the errors.');
+        return;
+      }
+  
+      const result = await handleSubscribe(email);
+      setResult(result);
+  
+      console.log(result)
+  
+      if (result === 200) {
+        openPopup('You are now subscribed!');
+      } else if (result === 400) {
+        openPopup('Failed');
+      }
+    };
 
   return (
     <section id="contact-footer">
@@ -53,6 +68,14 @@ const ContactFooter = () => {
               </button>
              </div>
             </form>
+                {isPopupOpen && (
+            <div className="popup-container" id="contact-popup">
+            <div className="popup-content">
+                <span className="close-btn" onClick={closePopup}>×</span>
+                <p>{result}</p>
+            </div>
+            </div>
+                    )}
                 <div className="error-message-box">
             <div className="email-error-message" id="email-error-message">
               {emailError}

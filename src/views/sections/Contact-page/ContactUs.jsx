@@ -1,85 +1,137 @@
-import React, { useState, useRef, useEffect } from 'react'
-import { NavLink } from 'react-router-dom'
-import HomeIcon from '../../../images/icons/bx-home-alt.svg'
-import RightChevron from '../../../images/icons/bx-chevrons-right.svg'
-import EnvelopeIcon from '../../../images/icons/icon_envelope.svg'
-import BlueArrow from '../../../images/icons/Vector_bluearrow.svg'
-import GroupIcon  from '../../../images/icons/icon_career.svg'
-import DropDownButton from '../../components/DropDownButton'
-import { UseAppStore } from '../../../contexts/AppState';
+import React, { useState, useRef, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
+import HomeIcon from '../../../images/icons/bx-home-alt.svg';
+import RightChevron from '../../../images/icons/bx-chevrons-right.svg';
+import EnvelopeIcon from '../../../images/icons/icon_envelope.svg';
+import BlueArrow from '../../../images/icons/Vector_bluearrow.svg';
+import GroupIcon from '../../../images/icons/icon_career.svg';
+import DropDownButton from '../../components/DropDownButton';
 import useEmailValidation from './../../../js/emailValidation';
 
-
 const ContactUs = () => {
+  const url = 'https://kyhnet23-assignment.azurewebsites.net/api/specialists';
+  const loaded = useRef(false);
 
-    const url = 'https://kyhnet23-assignment.azurewebsites.net/api/specialists'
-    const [specialists, setSpecialists] = useState([])
-    const loaded = useRef(false)
-    
-    useEffect(() => {
-        if (!loaded.current) {
-            setSpecialists([])
-        
-            const fetchData = async () => {
-                const result = await fetch(url)
-                const data = await result.json()
-                
-                for (let item of data) {
-                    setSpecialists(current => [...current, { value: item.id, text: `${item.firstName} ${item.lastName}` }])
-                }
-            }
+  const {
+    email,
+    setEmail,
+    emailError,
+    handleEmailChange,
+    validateEmail,
+  } = useEmailValidation();
+  const [fullname, setfullname] = useState('');
+  const [specialists, setSpecialists] = useState([]);
+  const [specialist, setSpecialist] = useState('');
+  const [date, setDate] = useState('');
+  const [time, setTime] = useState('');
+  const [result, setResult] = useState();
+  const [isPopupOpen, setPopupOpen] = useState(false);
 
-            fetchData()
-            loaded.current = true
-        }
-    }, [])
+  useEffect(() => {
+    if (!loaded.current) {
+      setSpecialists([]);
 
+      const fetchData = async () => {
+        try {
+          const response = await fetch(url);
+          const data = await response.json();
 
-        const [name, setName] = useState('');
-        const [nameError, setNameError] = useState('');
-      
-        const validateName = (value) => {
-          if (value.length === 0) {
-            setNameError('You must enter a name.');
-          } else if (value.length < 2) {
-            setNameError('You must enter a valid name.');
-          } else {
-            setNameError('');
+          for (let item of data) {
+            setSpecialists((current) => [...current, { value: item.id, text: `${item.firstName} ${item.lastName}` }]);
           }
-        };
-      
-        const handleNameChange = (e) => {
-          const { value } = e.target;
-          setName(value);
-          validateName(value);
-        };
+        } catch (error) {
+          console.error('Error fetching specialists:', error);
+        }
+      };
 
-    const { handleSubscribe } = UseAppStore();
-    const {
-      email,
-      setEmail,
-      emailError,
-      handleEmailChange,
-      validateEmail,
-    } = useEmailValidation();
-    const [result, setResult] = useState();
-  
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-  
-      validateEmail(email);
-  
-      if (!email || emailError) {
-        console.error('Invalid email. Please correct the errors.');
-        return;
+      fetchData();
+      loaded.current = true;
+    }
+  }, [url]);
+
+  const openPopup = (message) => {
+    setResult(message);
+    setPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setPopupOpen(false);
+  };
+
+  const handleNameChange = (value) => {
+    setfullname(value);
+  };
+
+  const handleBookAppointment = async (appointmentData) => {
+    const apiUrl = 'https://kyhnet23-assignment.azurewebsites.net/api/book-appointment';
+
+    try {
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(appointmentData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        return 200;
       }
-  
-      const result = await handleSubscribe(email);
-      setResult(result);
-  
-      if (result === 200) window.alert('You are now subscribed!');
-      if (result === 400) window.alert('Failed');
+
+      return result.message || 'An error occurred.';
+    } catch (error) {
+      console.error('Error making API call:', error);
+      return 'An error occurred.';
+    }
+  };
+
+  const validateName = (fullname) => {
+     if (fullname.length === 0) {
+        return ""
+     }
+      if (fullname.length < 3) {
+     return "Name must be at least 3 characters long.";
+   }
+      return ""
+ };
+
+  const bookAppointment = async (e) => {
+    e.preventDefault();
+
+    validateEmail(email);
+    validateName(fullname)
+
+    if (!email || emailError) {
+      console.error('Invalid email. Please correct the errors.');
+      return;
+    }
+
+    const appointmentData = {
+      fullname,
+      email,
+      specialist,
+      date,
+      time,
     };
+
+    try {
+      const result = await handleBookAppointment(appointmentData);
+      setResult(result);
+
+      console.log(result)
+
+      if (result === 200) {
+        openPopup('Your appointment was booked!');
+      } else {
+        openPopup('Failed');
+      }
+    } catch (error) {
+      console.error('Error booking appointment:', error);
+      openPopup('An error occurred while booking the appointment.');
+    }
+  };
 
   return (
 <section id="contact-us">
@@ -123,22 +175,22 @@ const ContactUs = () => {
       </div>
       <section id="online-form">
          <div className="container">
-            <form onSubmit={handleSubmit} noValidate>
+            <form onSubmit={bookAppointment} noValidate>
                <h1>Get Online Consultation</h1>
                <div className="content">
                   <div id="form-fullname" className="input-group">
-                     <div id="form-fullname" className="input-group">
+                     <div>
                         <label htmlFor="form-fullname">Full Name</label>
                         <input
                            required
-                           onChange={(e) => handleNameChange(e)}
-                        name="text"
-                        type="text"
-                        value={name}
-                        className="form-text"
-                        />
-                        <div className="error-message-box">
-                           <div className="name-error-message">{nameError}</div>
+                           onChange={(e) => handleNameChange(e.target.value)}
+                           fullname="text"
+                           type="text"
+                           value={fullname}
+                           className="form-text"
+                           />
+                       <div className="error-message-box">
+                           <div className="name-error-message">{validateName(fullname)}</div>
                         </div>
                      </div>
                   </div>
@@ -153,7 +205,7 @@ const ContactUs = () => {
                      <div id="form-specialist" className="input-group">
                         <label htmlFor="form-specialist-">Specialists</label>
                         <div className="dropdown-container">
-                           <DropDownButton options={specialists} />
+                           <DropDownButton value={specialists} options={specialists} />
                         </div>
                         <div className="error-message-box">
                            <div className="name-error-message"></div>
@@ -162,17 +214,37 @@ const ContactUs = () => {
                      <div id="form-date-time" className="input-group">
                         <div id="form-date">
                            <label htmlFor="date">Date</label>
-                           <input required id="date" type="date" />
+                           <input
+                              required
+                              id="date"
+                              type="date"
+                              value={date}
+                              onChange={(e) => setDate(e.target.value)}
+                           />
                         </div>
                         <div id="form-time">
                            <label htmlFor="time">Time</label>
-                           <input required id="time" type="time" />
+                           <input
+                              required
+                              id="time"
+                              type="time"
+                              value={time}
+                              onChange={(e) => setTime(e.target.value)}
+                           />
                         </div>
-                     </div>
+                        </div>
                      <button className="btn btn-theme" type="submit">Make an appointment</button>
                   </div>
                </div>
             </form>
+            {isPopupOpen && (
+        <div className="popup-container" id="contact-popup">
+          <div className="popup-content">
+            <span className="close-btn" onClick={closePopup}>×</span>
+            <p>{result}</p>
+          </div>
+        </div>
+      )}
          </div>
       </section>
    </div>

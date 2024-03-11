@@ -13,6 +13,16 @@ const Subscribe = () => {
     validateEmail,
   } = useEmailValidation();
   const [result, setResult] = useState();
+  const [isPopupOpen, setPopupOpen] = useState(false);
+
+  const openPopup = (message) => {
+    setResult(message);
+    setPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setPopupOpen(false);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,8 +37,13 @@ const Subscribe = () => {
     const result = await handleSubscribe(email);
     setResult(result);
 
-    if (result === 200) window.alert('You are now subscribed!');
-    if (result === 400) window.alert('Failed');
+    console.log(result)
+
+    if (result === 200) {
+      openPopup('You are now subscribed!');
+    } else if (result === 400) {
+      openPopup('Failed');
+    }
   };
 
   return (
@@ -54,6 +69,14 @@ const Subscribe = () => {
               {emailError}
             </div>
           </div>
+      {isPopupOpen && (
+        <div className="popup-container">
+          <div className="popup-content">
+            <span className="close-btn" onClick={closePopup}>×</span>
+            <p>{result}</p>
+          </div>
+        </div>
+      )}
         </div>
       </div>
     </section>

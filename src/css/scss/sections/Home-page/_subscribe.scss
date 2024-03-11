@@ -26,6 +26,10 @@
         .notify-box {
             gap: 80px;
 
+            h1 {
+                @include h4;
+            }
+
             @include lg {
                 gap: 30px;
             }
@@ -48,11 +52,6 @@
                     left: 0;
                 }
             }
-            
-
-        h1 {
-            @include h4;
-        }
 
         button {
             border-radius: 0 10px 10px 0;
