@@ -181,6 +181,7 @@ const ContactUs = () => {
                      <div>
                         <label htmlFor="form-fullname">Full Name</label>
                         <input
+                           autoComplete='off'
                            required
                            onChange={(e) => handleNameChange(e.target.value)}
                            fullname="text"

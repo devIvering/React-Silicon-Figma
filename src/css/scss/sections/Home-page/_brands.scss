@@ -14,11 +14,7 @@
         .box {
             background-color: white !important;
 
-            :hover {
-                @include shadow-l;
-
             }
             padding: 30px;
         }
     }
-}

@@ -56,14 +56,13 @@ form {
 
     .form-email {
         padding: 10px;
-        background-image: url('/images/subscribe-section/bx-envelope.svg');
+        background-image: url('/src/images/icons/Vector_grey.svg');
         background-size: 20px; 
         background-repeat: no-repeat;
         background-position: 10px center;
         padding-left: 40px; 
         border-radius: 10px 0 0 10px;
         border: 1px solid $gray-300;
-        width: 400px;
 
         .email-input::placeholder {
             color: $gray-500;
@@ -72,3 +71,4 @@ form {
     }
     
 }
+

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import NotificationIcon from '../../../images/subscribe-section/notification.svg';
 import { UseAppStore } from '../../../contexts/AppState';
 import useEmailValidation from './../../../js/emailValidation';
+import envelopeIcon from './../../../images/icons/bx-envelope.svg'
 
 const Subscribe = () => {
   const { handleSubscribe } = UseAppStore();
@@ -57,7 +58,10 @@ const Subscribe = () => {
           <div className="form-and-button">
             <form onSubmit={handleSubmit} noValidate>
                 <div className="input-group">   
-                    <input placeholder='Your Email' value={email} onChange={(e) => handleEmailChange(e.target.value)} />
+                    <input placeholder='Your Email' 
+                           value={email} 
+                           onChange={(e) => handleEmailChange(e.target.value)}
+                           className="form-email"/> 
                     <button type="submit" id="home-subscribe-button" className="btn-theme">
                         Subscribe
                     </button>

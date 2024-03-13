@@ -2,16 +2,14 @@ import React from 'react'
 import { NavLink, Link, useLocation } from 'react-router-dom'
 import Logo from '../../images/logo/silicon-logo-light_theme.svg'
 import { toggleMenu } from '../../js/script'
-import { UseAppStore } from '../../contexts/AppState'
 
 
 
 
 const Header = () => {
-      const { allowShadow } = UseAppStore()
 
   return (
-    <header className={`${allowShadow ? 'shadow': ''} `}>
+    <header>
       <div className="container">
         <Link id="logo" to="/">
           <img src={Logo} alt="silicon logotype" />

@@ -89,7 +89,7 @@ const NewsFooter = () => {
          <div className="subscribe-box">
             <form onSubmit={handleSubmit} noValidate>
                <div className="input-group">  
-                  <input placeholder='Your Email' value={email} onChange={(e) => handleEmailChange(e.target.value)} />
+                  <input className="form-email" placeholder='Your Email' value={email} onChange={(e) => handleEmailChange(e.target.value)} />
                   <button type="submit" id="home-subscribe-button" className="btn-theme">
                   Subscribe *
                   </button>
