@@ -5,35 +5,34 @@ import HomeIcon from '../images/error-page/icon-l.svg'
 import Header from './sections/Header'
 
 const Error = () => {
-  return (
+    return (
     <section>
-                <Header />
-        <div className="error-container">
-        <div className="error-image">
-            <img src={ErrorImage} alt="Error message" />
-        </div>
-        <div className="error-text-holder">
-            <div>
+       <Header />
+       <div className="error-container">
+          <div className="error-image">
+             <img src={ErrorImage} alt="Error message" />
+          </div>
+          <div className="error-text-holder">
+             <div>
                 <h1>Ooops!</h1>
-            </div>
-            <div>
+             </div>
+             <div>
                 <p>The page you are looking for is not available.</p>
-            </div>
-                <NavLink to="/">
-                    <button className="btn-theme">
-                        <img src={HomeIcon} alt="Home Icon" />
-                        Go to homepage
-                    </button>
-                </NavLink>
-            </div>
-        </div>
-        <div className="error-footer">
-            <div>
-                <p>2024. All rights reserved. Silicon Template </p>
-            </div>
-        </div>
+             </div>
+             <NavLink to="/">
+                <button className="btn-theme">
+                <img src={HomeIcon} alt="Home Icon" />
+                Go to homepage
+                </button>
+             </NavLink>
+          </div>
+       </div>
+       <div className="error-footer">
+          <div>
+             <p>2024. All rights reserved. Silicon Template </p>
+          </div>
+       </div>
     </section>
-  )
-}
-
-export default Error
+    )
+    }
+    export default Error

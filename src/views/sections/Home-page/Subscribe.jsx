@@ -49,42 +49,41 @@ const Subscribe = () => {
 
   return (
     <section id="subscribe-section">
-      <div className="container">
-        <div className="notify-box">
-          <img src={NotificationIcon} alt="Notification-icon" />
-          <h1>Subscribe to our newsletter to stay informed about latest updates</h1>
-        </div>
-        <div className="subscribe-box">
-          <div className="form-and-button">
-            <form onSubmit={handleSubmit} noValidate>
-                <div className="input-group">   
-                    <input placeholder='Your Email' 
-                           value={email} 
-                           onChange={(e) => handleEmailChange(e.target.value)}
-                           className="form-email"/> 
-                    <button type="submit" id="home-subscribe-button" className="btn-theme">
-                        Subscribe
-                    </button>
+       <div className="container">
+          <div className="notify-box">
+             <img src={NotificationIcon} alt="Notification-icon" />
+             <h1>Subscribe to our newsletter to stay informed about latest updates</h1>
+          </div>
+          <div className="subscribe-box">
+             <div className="form-and-button">
+                <form onSubmit={handleSubmit} noValidate>
+                   <div className="input-group">   
+                      <input placeholder='Your Email' 
+                         value={email} 
+                         onChange={(e) => handleEmailChange(e.target.value)}
+                      className="form-email"/> 
+                      <button type="submit" id="home-subscribe-button" className="btn-theme">
+                      Subscribe
+                      </button>
+                   </div>
+                </form>
+             </div>
+             <div className="error-message-box">
+                <div className="email-error-message" id="email-error-message">
+                   {emailError}
                 </div>
-            </form>
+             </div>
+             {isPopupOpen && (
+             <div className="popup-container">
+                <div className="popup-content">
+                   <span className="close-btn" onClick={closePopup}>×</span>
+                   <p>{result}</p>
+                </div>
+             </div>
+             )}
           </div>
-          <div className="error-message-box">
-            <div className="email-error-message" id="email-error-message">
-              {emailError}
-            </div>
-          </div>
-      {isPopupOpen && (
-        <div className="popup-container">
-          <div className="popup-content">
-            <span className="close-btn" onClick={closePopup}>×</span>
-            <p>{result}</p>
-          </div>
-        </div>
-      )}
-        </div>
-      </div>
+       </div>
     </section>
-  );
-};
-
-export default Subscribe;
+    );
+    };
+    export default Subscribe;
