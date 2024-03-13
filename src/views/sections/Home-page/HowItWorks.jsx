@@ -22,6 +22,11 @@ const HowItWorks = () => {
             </div>
         </div>
     </div>
+    <div className="carousel">
+        <div className="section section-dark-blue"></div>
+        <div className="section section-light-blue"></div>
+        <div className="section section-light-blue"></div>
+      </div>
 </section>
   )
 }

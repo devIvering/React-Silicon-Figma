@@ -41,10 +41,15 @@ const NewsFooter = () => {
      console.log(result)
  
      if (result === 200) {
-       openPopup('You are now subscribed!');
-     } else if (result === 400) {
-       openPopup('Failed');
-     }
+      openPopup(
+         <div>
+         You are now subscribed!
+         <br />
+         Subscribtion information will be sent to:<br /> {email}
+       </div>);
+    } else if (result === 400) {
+      openPopup('Subscription failed');
+    }
    };
 
    return (

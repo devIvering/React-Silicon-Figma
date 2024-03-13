@@ -125,7 +125,7 @@ const ContactUs = () => {
             <div>
             Your appointment was booked!
             <br />
-            We will see on {date} at {time}
+            We will see you on {date} at {time}
           </div>);
        } else if (result === 400) {
          openPopup('Booking failed.');
@@ -233,7 +233,7 @@ const ContactUs = () => {
                            />
                         </div>
                         </div>
-                     <button className="btn btn-theme" type="submit">Make an appointment</button>
+                     <button className="btn-theme" type="submit">Make an appointment</button>
                   </div>
                </div>
             </form>
