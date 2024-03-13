@@ -10,9 +10,9 @@ const HowItWorks = () => {
             <div className="content">
                 <h1>How Does It Work?</h1>
             <div className="phone-images">
-                <img src={MobileOne} alt="Mobile-phone" />
-                <img src={MobileTwo} alt="Mobile-phone" />
-                <img src={MobileThree} alt="Mobile-phone" />
+                <img className="phone-one" src={MobileOne} alt="Mobile-phone" />
+                <img className="phone-two" src={MobileTwo} alt="Mobile-phone" />
+                <img className="phone-three" src={MobileThree} alt="Mobile-phone" />
             </div>
             <div className="step-2-text">
                 <h2>Step 2. Latest transaction history</h2>

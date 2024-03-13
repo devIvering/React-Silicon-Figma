@@ -18,6 +18,10 @@
 
                 .phone-images {
                     display: none;
+
+                    .phone-one, .phone-three {
+                        opacity: 0.8;
+                    }
                     
                     @include lg {
                         display: flex;

@@ -18,12 +18,12 @@ const Location = () => {
           </div>
           <div className="contact-info">
              <div className="center-one">
-                <h1>Medical Center 1</h1>
-                <div>
+                <h4>Medical Center 1</h4>
+                <div className="location-address-one">
                    <img src={LocationIcon} alt="Location-icon" />
                    <p>4517 Washington Ave. Manchester, Kentucky 39495</p>
                 </div>
-                <div>
+                <div className="contact-phonenumber">
                    <img src={PhoneIcon} alt="Phone-icon" />
                    <p>(406) 555-0120</p>
                 </div>
@@ -34,12 +34,12 @@ const Location = () => {
                 </div>
              </div>
              <div className="center-two">
-                <h1>Medical Center 2</h1>
-                <div>
+                <h4>Medical Center 2</h4>
+                <div className="location-address-two">
                    <a href="#"><img src={LocationIcon} alt="Location-icon" /></a>
                    <p>2464 Royal Ln. Mesa,New Jersey 45463</p>
                 </div>
-                <div>
+                <div className="contact-phonenumber">
                    <a href="#"><img src={PhoneIcon} alt="Phone-icon" /></a>
                    <p>(406) 544-0123</p>
                 </div>

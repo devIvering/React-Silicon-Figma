@@ -10,9 +10,8 @@
     .container {
 
         @include lg {
-            margin-top: 40px;
+            padding: 40px;
             display: flex;
-            gap: 50px;
             align-items: center;
             justify-content: space-between;
 
@@ -46,10 +45,6 @@
             
                 @include md {
                     left: 50px;
-                }
-            
-                @include lg {
-                    left: 0;
                 }
             }
 

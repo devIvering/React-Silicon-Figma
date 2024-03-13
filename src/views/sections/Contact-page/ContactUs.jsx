@@ -115,21 +115,21 @@ const ContactUs = () => {
       time,
     };
 
-    try {
       const result = await handleBookAppointment(appointmentData);
       setResult(result);
 
       console.log(result)
 
       if (result === 200) {
-        openPopup('Your appointment was booked!');
-      } else {
-        openPopup('Booking failed');
-      }
-    } catch (error) {
-      console.error('Error booking appointment:', error);
-      openPopup('An error occurred while booking the appointment.');
-    }
+         openPopup(
+            <div>
+            Your appointment was booked!
+            <br />
+            We will see on {date} at {time}
+          </div>);
+       } else if (result === 400) {
+         openPopup('Booking failed.');
+       }
   };
 
   return (
@@ -155,7 +155,7 @@ const ContactUs = () => {
                   We will respond as soon as possible.
                </p>
                <NavLink to="/message">Leave a message</NavLink>
-               <img src={BlueArrow} alt="Blue-arrow" />
+               <img className="arrow-icon" src={BlueArrow} alt="Blue-arrow" />
             </div>
          </div>
          <div className="careers">
@@ -168,7 +168,7 @@ const ContactUs = () => {
                   Sit ac ipsum leo lorem magna nunc mattis maecenas non vestibulum.
                </p>
                <a href="#">Send an application</a>
-               <img src={BlueArrow} alt="Blue-arrow" /> 
+               <img className="arrow-icon" src={BlueArrow} alt="Blue-arrow" /> 
             </div>
          </div>
       </div>

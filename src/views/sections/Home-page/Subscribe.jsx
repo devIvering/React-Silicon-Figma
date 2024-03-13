@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import NotificationIcon from '../../../images/subscribe-section/notification.svg';
 import { UseAppStore } from '../../../contexts/AppState';
 import useEmailValidation from './../../../js/emailValidation';
-import envelopeIcon from './../../../images/icons/bx-envelope.svg'
 
 const Subscribe = () => {
   const { handleSubscribe } = UseAppStore();
@@ -41,7 +40,12 @@ const Subscribe = () => {
     console.log(result)
 
     if (result === 200) {
-      openPopup('You are now subscribed!');
+      openPopup(
+         <div>
+         You are now subscribed!
+         <br />
+         Subscribtion information will be sent to:<br /> {email}
+       </div>);
     } else if (result === 400) {
       openPopup('Subscription failed');
     }

@@ -3,10 +3,6 @@
     .container {
         align-items: center;
 
-        .feature-image {
-            margin-bottom: 20px;
-        }
-
 
         @include xl {
             display: grid;
@@ -19,6 +15,7 @@
             @include h1;
             margin-bottom: 20px;
         }
+
 
         h2 {
             @include h6;

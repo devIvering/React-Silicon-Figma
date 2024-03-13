@@ -1,6 +1,7 @@
 #payment-section {
 
     .container {
+        margin-top: 80px;
         display: grid;
         grid-template-areas:    "money"
                                 "imageone" 
@@ -28,15 +29,22 @@
         grid-area: money;
         padding: 20px;
 
+        h1 {
+            margin-bottom: 30px;
+        }
+
         .payment-box {
             display: flex;
             align-items: center;
-            text-align: center;
             gap: 10px;
 
-            p {
-                margin-top: 15px;
+            img {
+                margin-bottom: 15px;
             }
+        }
+
+        button {
+            margin-top: 10px;
         }
     }
 
@@ -59,6 +67,11 @@
             img {
                 margin-bottom: 10px;
             }
+
+        }
+        
+        button {
+            margin-top: 20px;
         }
     }
 }

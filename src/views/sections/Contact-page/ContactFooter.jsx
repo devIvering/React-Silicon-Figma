@@ -43,10 +43,15 @@ const ContactFooter = () => {
       console.log(result)
   
       if (result === 200) {
-        openPopup('You are now subscribed!');
-      } else if (result === 400) {
-        openPopup('Failed');
-      }
+         openPopup(
+            <div>
+            You are now subscribed!
+            <br />
+            Subscribtion information will be sent to:<br /> {email}
+          </div>);
+       } else if (result === 400) {
+         openPopup('Subscription failed');
+       }
     };
 
     return (
@@ -68,14 +73,6 @@ const ContactFooter = () => {
                         </button>
                      </div>
                   </form>
-                  {isPopupOpen && (
-                  <div className="popup-container" id="contact-popup">
-                     <div className="popup-content">
-                        <span className="close-btn" onClick={closePopup}>×</span>
-                        <p>{result}</p>
-                     </div>
-                  </div>
-                  )}
                   <div className="error-message-box">
                      <div className="email-error-message" id="email-error-message">
                         {emailError}
@@ -141,6 +138,14 @@ const ContactFooter = () => {
                </div>
             </div>
          </div>
+         {isPopupOpen && (
+                  <div className="popup-container" id="contact-popup">
+                     <div className="popup-content">
+                        <span className="close-btn" onClick={closePopup}>×</span>
+                        <p>{result}</p>
+                     </div>
+                  </div>
+                  )}
       </section>
       );
       };
