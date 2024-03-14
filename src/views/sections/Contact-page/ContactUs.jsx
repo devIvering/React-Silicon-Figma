@@ -178,7 +178,6 @@ const ContactUs = () => {
                <h1>Get Online Consultation</h1>
                <div className="content">
                   <div id="form-fullname" className="input-group">
-                     <div>
                         <label htmlFor="form-fullname">Full Name</label>
                         <input
                            autoComplete='off'
@@ -192,7 +191,6 @@ const ContactUs = () => {
                        <div className="error-message-box">
                            <div className="name-error-message">{validateName(fullname)}</div>
                         </div>
-                     </div>
                   </div>
                   <div id="form-email" className="input-group">
                      <label htmlFor="form-email">Email Address</label>                                      
@@ -212,7 +210,7 @@ const ContactUs = () => {
                         </div>
                      </div>
                      <div id="form-date-time" className="input-group">
-                        <div id="form-date">
+                        <div id="form-date" className="input-group">
                            <label htmlFor="date">Date</label>
                            <input
                               required
@@ -222,7 +220,7 @@ const ContactUs = () => {
                               onChange={(e) => setDate(e.target.value)}
                            />
                         </div>
-                        <div id="form-time">
+                        <div id="form-time" className="input-group">
                            <label htmlFor="time">Time</label>
                            <input
                               required

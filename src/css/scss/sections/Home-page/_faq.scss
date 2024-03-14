@@ -50,6 +50,10 @@
             .card {
                 margin-bottom: 20px;
                 border: none;
+
+                :hover {
+                    color: $success;
+                }
                 
                 h6 {
                     @include h6;

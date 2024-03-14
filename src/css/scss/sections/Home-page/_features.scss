@@ -19,10 +19,12 @@
 
         h2 {
             @include h6;
+            text-align: start;
         }
 
         p {
            color: $gray-700;
+           text-align: start;
         }
 
         .box {

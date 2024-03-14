@@ -24,11 +24,11 @@ const HomeFooter = () => {
             <Link className="appstore" href="#"><img src={Appstore} alt="Download on Appstore" /></Link>
             <Link className="googleplay" href="#"><img src={GooglePlay} alt="Download on Google Play" /></Link> 
         </div>
-        <div className="footer-social">
-            <NavLink to="#"><img src={FacebookIcon} alt="Facebook-link" /></NavLink>
-            <NavLink to="#"><img src={TwitterIcon} alt="Twitter-link" /></NavLink>
-            <NavLink to="#"><img src={InstagramIcon} alt="Instagram-link" /></NavLink>
-            <NavLink to="#"><img src={YoutubeIcon} alt="Youtube-link" /></NavLink>
+        <div className="social-icons">
+            <NavLink to="/facebook"><img src={FacebookIcon} alt="Facebook-link" /></NavLink>
+            <NavLink to="/twitter"><img src={TwitterIcon} alt="Twitter-link" /></NavLink>
+            <NavLink to="/instagram"><img src={InstagramIcon} alt="Instagram-link" /></NavLink>
+            <NavLink to="/youtube"><img src={YoutubeIcon} alt="Youtube-link" /></NavLink>
         </div>
         <div className="bottom-text">
             <p>2024. All rights reserved. Pulvinar urna condimentum amet tempor, ornare integer. 

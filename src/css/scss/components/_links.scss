@@ -27,3 +27,27 @@ a {
         text-decoration: none;
     }
 }
+
+.appstore, .googleplay {
+    display: block;
+
+    &:hover {
+      filter: brightness(50%);
+    }
+
+
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+  
+    a {
+      display: block; 
+      transition: transform 0.3s ease; 
+  
+      &:hover {
+        transform: scale(1.5);
+      }
+    }
+  }

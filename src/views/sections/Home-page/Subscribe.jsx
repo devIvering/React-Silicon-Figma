@@ -73,7 +73,7 @@ const Subscribe = () => {
                 </form>
              </div>
              <div className="error-message-box">
-                <div className="email-error-message" id="email-error-message">
+                <div className="email-error-message subscribe-error" id="email-error-message">
                    {emailError}
                 </div>
              </div>

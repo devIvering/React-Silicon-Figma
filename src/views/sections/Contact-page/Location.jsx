@@ -49,7 +49,7 @@ const Location = () => {
                    <p className="time-two"><strong>Sat – Sun:</strong> 9:00 am – 20:00 am</p>
                 </div>
              </div>
-             <div className="footer-social">
+             <div className="social-icons">
                 <NavLink to="#"><img src={FacebookIcon} alt="Facebook-link" /></NavLink>
                 <NavLink to="#"><img src={TwitterIcon} alt="Twitter-link" /></NavLink>
                 <NavLink to="#"><img src={InstagramIcon} alt="Instagram-link" /></NavLink>

@@ -57,7 +57,11 @@
 
 
         #online-form {
-            margin-right: 150px;
+
+            @include lg {
+                margin-right: 150px;
+
+            }
 
             .container {
                 @include shadow-l;

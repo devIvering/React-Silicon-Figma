@@ -8,19 +8,22 @@
     .container {
         display: flex;
         flex-direction: column;
-
+        padding: 50px 0 10px 0;
+        
         @include xl {
             flex-direction: row;
-            padding: 50px 0 10px 0;
             gap: 10px;
         }
         
         #newsletter-box {
             display: grid;
             flex: 1;
-            margin-left: 100px;
-            margin-right: 200px;
             gap: 30px;
+
+            @include lg {
+                margin-left: 100px;
+                margin-right: 200px;
+            }
 
             .subscribe-box {
 
@@ -28,7 +31,7 @@
                         background-color: rgb(17, 16, 16);
                         color: white;
                         border: 1px thin lightgrey;
-                        opacity: 0.7;   
+                        opacity: 0.7; 
                         width: 66%;
                     }
     
