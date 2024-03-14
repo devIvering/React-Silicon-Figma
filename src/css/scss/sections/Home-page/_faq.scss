@@ -50,14 +50,23 @@
             .card {
                 margin-bottom: 20px;
                 border: none;
-
+                width: 450px;
+                
+                @include md {
+                    width: 600px;
+                }
+                
                 :hover {
                     color: $success;
                 }
                 
                 h6 {
-                    @include h6;
+                    font-size: 12px;
                     padding: 12px;
+                    
+                  @include md {
+                    @include h6;
+                  }
                 }
                 
                 p {
@@ -68,10 +77,7 @@
                     @include shadow-l;
                     background-color: white;
                     z-index: 1;
-
-                    @include lg {
-                        width: 600px;
-                    }
+                    
                 }
             }
             .heading {

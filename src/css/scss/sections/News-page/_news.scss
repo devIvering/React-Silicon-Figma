@@ -2,7 +2,8 @@
         display: grid;
         grid-template-columns: 1fr;
         gap: 30px;
-        padding: 30px 100px;
+        margin: 0 auto;
+        width: 80%;
         
         @include md {
             grid-template-columns: 1fr 1fr;

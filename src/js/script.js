@@ -8,6 +8,7 @@ export const toggleMenu = () => {
     if (element.style.display === 'none') {
         element.style.display = 'block';
         element.style.color = '#ffffff';
+        element.style.zIndex = 1;
 
         const links = element.querySelectorAll('a');
         links.forEach(link => {

@@ -21,8 +21,8 @@ const HomeFooter = () => {
             <NavLink to="/#account">Account</NavLink>
         </div>
         <div className="app-download">
-            <Link className="appstore" href="#"><img src={Appstore} alt="Download on Appstore" /></Link>
-            <Link className="googleplay" href="#"><img src={GooglePlay} alt="Download on Google Play" /></Link> 
+            <Link className="appstore" href="/appstore"><img src={Appstore} alt="Download on Appstore" /></Link>
+            <Link className="googleplay" href="/googeplay"><img src={GooglePlay} alt="Download on Google Play" /></Link> 
         </div>
         <div className="social-icons">
             <NavLink to="/facebook"><img src={FacebookIcon} alt="Facebook-link" /></NavLink>

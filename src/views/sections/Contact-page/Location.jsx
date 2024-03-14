@@ -14,7 +14,7 @@ const Location = () => {
     <section id="map-section">
        <div className="container">
           <div>
-             <img src={MapImage} alt="Map-image" />
+             <img className="map-picture" src={MapImage} alt="Map-image" />
           </div>
           <div className="contact-info">
              <div className="center-one">

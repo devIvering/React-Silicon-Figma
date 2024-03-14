@@ -35,9 +35,10 @@
         }
       }
 
-      .mobile-view-phone {
+      .mobile-phone-view {
+        display: block;
 
-        @include xl {
+        @include lg {
           display: none;
         }
       }

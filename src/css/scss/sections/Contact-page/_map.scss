@@ -9,6 +9,12 @@
             display: flex;
         }
 
+        .map-picture {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+
         .contact-info {
             display: flex;
             flex-direction: column;
@@ -24,6 +30,7 @@
 
                 .location-address-one {
 
+                   
                     p {
                         margin-top: 15px;
                     }

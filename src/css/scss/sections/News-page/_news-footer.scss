@@ -17,14 +17,14 @@
                 justify-content: space-between;
     
             input {
-                width: 350px;
+                width: 300px;
 
                 @include lg {
                     width: 700px;
                 }
             }
             button {
-                margin-left: 70px;
+                margin-left: 10px;
 
                 @include lg {
                     margin-left: 420px;
@@ -51,7 +51,6 @@
         .checkbox-holder {
             display: grid;
 
-
             @include lg {
                 display: flex;
                 gap: 100px;
@@ -59,8 +58,12 @@
     
             .checkboxes {
                 display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-columns: 1fr;
                 gap: 10px;
+
+                @include lg {
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
     
                 label {
                     @include text-s;

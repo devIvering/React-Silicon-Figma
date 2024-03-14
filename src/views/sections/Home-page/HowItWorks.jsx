@@ -24,13 +24,19 @@ const HowItWorks = () => {
             <button className="carousel-button" onClick={prevImage}>
               <i className="fa-solid fa-chevron-left"></i>
             </button>
-            <img className="mobile-view-phone" src={images[currentImageIndex]} alt="Mobile-phone" />
+            <img
+              className="mobile-phone-view"
+              src={images[currentImageIndex]}
+              alt="Mobile-phone"
+              style={{ opacity: 1 }}
+            />
             {images.map((image, index) => (
               <img
                 key={index}
                 className={`phone ${currentImageIndex === index ? 'active' : ''}`}
                 src={image}
                 alt="Mobile-phone"
+                style={{ opacity: currentImageIndex === index ? 1 : 0.8 }}
               />
             ))}
             <button className="carousel-button" onClick={nextImage}>
