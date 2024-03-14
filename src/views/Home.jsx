@@ -13,7 +13,6 @@ import Header from './sections/Header'
 const Home = () => {
   return (
     <main>
-      <Header />
       <Showcase />
       <Brands />
       <Features />

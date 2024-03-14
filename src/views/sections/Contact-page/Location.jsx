@@ -4,10 +4,10 @@ import MapImage from '../../../images/contact-page/map.svg'
 import LocationIcon from '../../../images/contact-page/bx-map.svg'
 import PhoneIcon from '../../../images/contact-page/bx-phone-call.svg'
 import WatchIcon from '../../../images/contact-page/bx-time-five.svg'
-import FacebookIcon from '../../../images/icons/S_facebook.svg'
-import TwitterIcon from '../../../images/icons/S_twitter.svg'
-import InstagramIcon from '../../../images/icons/S_instagram.svg'
-import YoutubeIcon from '../../../images/icons/S_youtube.svg'
+import FacebookIcon from '../../components/FacebookIcon'
+import TwitterIcon from '../../components/TwitterIcon'
+import InstagramIcon from '../../components/InstagramIcon'
+import YoutubeIcon from '../../components/YoutubeIcon'
 
 const Location = () => {
     return (
@@ -50,10 +50,10 @@ const Location = () => {
                 </div>
              </div>
              <div className="social-icons">
-                <NavLink to="#"><img src={FacebookIcon} alt="Facebook-link" /></NavLink>
-                <NavLink to="#"><img src={TwitterIcon} alt="Twitter-link" /></NavLink>
-                <NavLink to="#"><img src={InstagramIcon} alt="Instagram-link" /></NavLink>
-                <NavLink to="#"><img src={YoutubeIcon} alt="Youtube-link" /></NavLink>
+                <FacebookIcon />
+                <TwitterIcon />
+                <InstagramIcon />
+                <YoutubeIcon />
              </div>
           </div>
        </div>

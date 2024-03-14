@@ -20,7 +20,7 @@
         gap: 5rem;
         height: 100%;
 
-        @include lg {
+        @include xl {
             display: flex;
         }
 
@@ -110,10 +110,6 @@
                     flex: 1;
                     margin-top: 10px;
                 }
-
-                button {
-                    height: 50px;
-                }
         
                 .content {
                     display: grid;
@@ -140,13 +136,18 @@
                     #form-date          { grid-area: date; }
                     #form-time          { grid-area: time; }
 
-                    button {
+                    #appointment-button {
+                        grid-area: button;
                         padding: 15px;
                         margin-top: 30px;
                         grid-area: button;
                         border-radius: 10px;
                         @include shadow-m;
-                        width: 48%;
+                        height: 50px;
+
+                        @include lg {
+                            width: 48%;
+                        }
                     }
                 }
             }

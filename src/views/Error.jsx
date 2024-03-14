@@ -7,7 +7,6 @@ import Header from './sections/Header'
 const Error = () => {
     return (
     <section>
-       <Header />
        <div className="error-container">
           <div className="error-image">
              <img src={ErrorImage} alt="Error message" />

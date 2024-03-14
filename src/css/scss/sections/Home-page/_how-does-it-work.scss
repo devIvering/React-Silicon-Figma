@@ -21,7 +21,7 @@
       display: flex;
       justify-content: center;
       gap: 80px;
-      margin-top: 60px;
+      margin: 60px 0 20px 0;
       
       img {
         width: 50%;
@@ -50,11 +50,6 @@
           display: none;
         }
       }
-    }
-    
-    .step-2-text {
-      text-align: center;
-      margin-top: 20px;
     }
   
     .phone-one, .phone-three {

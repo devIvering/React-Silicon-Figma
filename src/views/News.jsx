@@ -31,7 +31,6 @@ const News = () => {
 
   return (
     <>
-    <Header />
     <div className="contact-link">
         <img src={HomeIcon} alt="Home-icon" />
         <NavLink to="/">Home</NavLink>

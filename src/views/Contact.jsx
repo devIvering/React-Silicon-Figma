@@ -7,7 +7,6 @@ import Header from './sections/Header'
 const Contact = () => {
   return (
     <main> 
-        <Header />
         <ContactUs />
         <Location />
         <ContactFooter />

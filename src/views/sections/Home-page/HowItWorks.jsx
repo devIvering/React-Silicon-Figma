@@ -15,6 +15,11 @@ const HowItWorks = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
   };
 
+  const carouselSections = [
+    { color: currentImageIndex === 0 ? 'dark-blue' : 'light-gray', text: 'Step 1. Introduction' },
+    { color: currentImageIndex === 1 ? 'dark-blue' : 'light-gray', text: 'Step 2. Latest transaction history' },
+    { color: currentImageIndex === 2 ? 'dark-blue' : 'light-gray', text: 'Step 3. Review and confirm' }
+  ];
   return (
     <section id="how-it-works">
       <div className="container">
@@ -43,8 +48,8 @@ const HowItWorks = () => {
               <i className="fa-solid fa-chevron-right"></i>
             </button>
           </div>
-          <div className="step-2-text">
-            <h2>Step 2. Latest transaction history</h2>
+          <div className="step-text">
+            <h2>{carouselSections[currentImageIndex].text}</h2>
             <p>
               Enim, et amet praesent pharetra. Mi non ante hendrerit amet sed. Arcu sociis
               tristique quisque hac in consectetur condimentum.
@@ -53,9 +58,9 @@ const HowItWorks = () => {
         </div>
       </div>
       <div className="carousel">
-        <div className="section section-dark-blue"></div>
-        <div className="section section-light-blue"></div>
-        <div className="section section-light-blue"></div>
+        {carouselSections.map((section, index) => (
+          <div key={index} className={`section section-${section.color}`}></div>
+        ))}
       </div>
     </section>
   );

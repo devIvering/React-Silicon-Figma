@@ -89,7 +89,7 @@ const ContactUs = () => {
         return ""
      }
       if (fullname.length < 3) {
-     return "Name must be at least 3 characters long.";
+     return "Please enter atleast 3 characters.";
    }
       return ""
  };
@@ -231,7 +231,7 @@ const ContactUs = () => {
                            />
                         </div>
                         </div>
-                     <button className="btn-theme" type="submit">Make an appointment</button>
+                     <button id="appointment-button" className="btn-theme" type="submit">Make an appointment</button>
                   </div>
                </div>
             </form>

@@ -8,7 +8,11 @@
     
     .footer-nav {
         display: flex;
-        gap: 60px;
+        gap: 30px;
+
+        @include lg {
+            gap: 60px;
+        }
 
         a {
             color: $gray-800;

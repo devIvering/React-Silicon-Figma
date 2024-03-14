@@ -1,12 +1,12 @@
 import React from 'react'
 import Logotype from '../../../images/logo/silicon-logo-light_theme.svg'
 import { NavLink, Link } from 'react-router-dom'
-import FacebookIcon from '../../../images/icons/S_facebook.svg'
-import TwitterIcon from '../../../images/icons/S_twitter.svg'
-import InstagramIcon from '../../../images/icons/S_instagram.svg'
-import YoutubeIcon from '../../../images/icons/S_youtube.svg'
-import Appstore from '../../../images/appstore.svg'
-import GooglePlay from '../../../images/googleplay.svg'
+import AppStoreButton from '../../components/AppStoreButton'
+import GooglePlayButton from '../../components/GooglePlayButton'
+import FacebookIcon from '../../components/FacebookIcon'
+import TwitterIcon from '../../components/TwitterIcon'
+import InstagramIcon from '../../components/InstagramIcon'
+import YoutubeIcon from '../../components/YoutubeIcon'
 
 const HomeFooter = () => {
   return (
@@ -21,14 +21,14 @@ const HomeFooter = () => {
             <NavLink to="/#account">Account</NavLink>
         </div>
         <div className="app-download">
-            <Link className="appstore" href="/appstore"><img src={Appstore} alt="Download on Appstore" /></Link>
-            <Link className="googleplay" href="/googeplay"><img src={GooglePlay} alt="Download on Google Play" /></Link> 
+            <AppStoreButton />
+            <GooglePlayButton />
         </div>
         <div className="social-icons">
-            <NavLink to="/facebook"><img src={FacebookIcon} alt="Facebook-link" /></NavLink>
-            <NavLink to="/twitter"><img src={TwitterIcon} alt="Twitter-link" /></NavLink>
-            <NavLink to="/instagram"><img src={InstagramIcon} alt="Instagram-link" /></NavLink>
-            <NavLink to="/youtube"><img src={YoutubeIcon} alt="Youtube-link" /></NavLink>
+            <FacebookIcon />
+            <TwitterIcon />
+            <InstagramIcon />
+            <YoutubeIcon />
         </div>
         <div className="bottom-text">
             <p>2024. All rights reserved. Pulvinar urna condimentum amet tempor, ornare integer. 

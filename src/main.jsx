@@ -8,6 +8,7 @@ import Error from './views/Error';
 import Contact from './views/Contact';
 import News from './views/News';
 import { AppStoreProvider } from './contexts/AppState';
+import Header from './views/sections/Header';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -15,6 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <AppStoreProvider>
       <div className="wrapper">
+       <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<Error />} />
