@@ -16,9 +16,9 @@ const HowItWorks = () => {
   };
 
   const carouselSections = [
-    { color: currentImageIndex === 0 ? 'dark-blue' : 'light-gray', text: 'Step 1. Introduction' },
+    { color: currentImageIndex === 0 ? 'dark-blue' : 'light-gray', text: 'Step 1. Live account balance tracker' },
     { color: currentImageIndex === 1 ? 'dark-blue' : 'light-gray', text: 'Step 2. Latest transaction history' },
-    { color: currentImageIndex === 2 ? 'dark-blue' : 'light-gray', text: 'Step 3. Review and confirm' }
+    { color: currentImageIndex === 2 ? 'dark-blue' : 'light-gray', text: 'Step 3. Safe transfers to your friends' }
   ];
   return (
     <section id="how-it-works">
@@ -41,7 +41,7 @@ const HowItWorks = () => {
                 className={`phone ${currentImageIndex === index ? 'active' : ''}`}
                 src={image}
                 alt="Mobile-phone"
-                style={{ opacity: currentImageIndex === index ? 1 : 0.8 }}
+                style={{ opacity: currentImageIndex === index ? 1 : 0.6 }}
               />
             ))}
             <button className="carousel-button" onClick={nextImage}>

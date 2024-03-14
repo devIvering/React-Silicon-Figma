@@ -14,10 +14,10 @@
 
         .subscribe-box {
                 display: flex;
-                margin-top: 30px;
                 justify-content: space-between;
-    
-            input {
+                
+                input {
+                margin-top: 30px;
                 width: 300px;
 
                 @include lg {
@@ -26,6 +26,7 @@
             }
             button {
                 margin-left: 10px;
+                margin-top: 30px;
 
                 @include lg {
                     margin-left: 420px;

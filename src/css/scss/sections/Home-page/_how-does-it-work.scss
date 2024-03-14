@@ -38,7 +38,7 @@
       .phone {
         display: none;
 
-        @include xl {
+        @include lg {
           display: block;
         }
       }
