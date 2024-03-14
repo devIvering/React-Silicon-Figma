@@ -80,7 +80,7 @@ header {
             display: none;
 
             @include lg {
-                display: block;
+                display: flex;
             }
         }
     

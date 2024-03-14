@@ -19,8 +19,13 @@ const Showcase = () => {
               <Link className="googleplay" to="/downloads/googleplay">
               <img src={GooglePlayImage} alt="Download on Google Play" /></Link>    
            </div>
-           <Link className="more" to="/services/manage-all-your-money">
-           <img src={arrowDown} alt="Chevron-down" />Discover more</Link>
+           <Link className="more" to="/services/manage-all-your-money"></Link>
+           <div className="discover-more">
+               <button className="carousel-button">
+                  <i className="fa-solid fa-chevron-down"></i>
+               </button>
+           <Link to="/discover">Discover more</Link>
+           </div>
         </div>
         <img id="showcase-image" src={ShowcaseMobilesImage} alt="two mobile phones" />
      </div>
