@@ -2,11 +2,11 @@
     
     .container {
         align-items: center;
+        margin-bottom: 70px;
 
 
         @include xl {
             display: grid;
-            gap: 3rem;
             padding-right: 3rem;
 
         }

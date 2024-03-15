@@ -244,6 +244,9 @@ const ContactUs = () => {
                               value={date}
                               onChange={(e) => setDate(e.target.value)}
                            />
+                            <div className="error-message-box">
+                                 <div className="date-error-message">{validateDate(date)}</div>
+                              </div>
                         </div>
                         <div id="form-time" className="input-group">
                            <label htmlFor="time">Time</label>
@@ -254,16 +257,11 @@ const ContactUs = () => {
                               value={time}
                               onChange={(e) => setTime(e.target.value)}
                            />
-                        </div>
-                        </div>
-                           <div className="date-and-time-error">
-                               <div className="error-message-box">
-                                 <div className="date-error-message">{validateDate(date)}</div>
-                              </div>
-                                 <div className="error-message-box">
+                           <div className="error-message-box">
                                     <div className="time-error-message">{validateTime(time)}</div>
                                  </div>
-                              </div>
+                        </div>
+                        </div>
                      <button id="appointment-button" className="btn-theme" type="submit">Make an appointment</button>
                   </div>
                </div>
