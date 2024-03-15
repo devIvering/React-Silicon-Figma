@@ -84,53 +84,56 @@ const ContactUs = () => {
    }
  };
 
-  const validateName = (fullname) => {
-     if (fullname.length === 0) {
-        return ""
-     }
-      if (fullname.length < 3) {
-     return "Please enter atleast 3 characters.";
+ const validateName = (fullname) => {
+   if (fullname.length > 0 && fullname.length < 3) {
+     return "Please enter at least 3 characters.";
    }
-      return ""
+   return "";
  };
 
-  const bookAppointment = async (e) => {
-    e.preventDefault();
+ const bookAppointment = async (e) => {
+   e.preventDefault();
+ 
+   validateEmail(email);
+ 
+   const nameError = validateName(fullname);
+   if (nameError) {
+     console.error('Invalid name. Please correct the errors.');
+     return;
+   }
 
-    validateEmail(email);
-    validateName(fullname)
-
-    if (!email || emailError) {
-      console.error('Invalid email. Please correct the errors.');
-      return;
-    }
-
-    const selectedSpecialist = specialist[0].value;
-
-    const appointmentData = {
-      fullname,
-      email,
-      specialist: selectedSpecialist,
-      date,
-      time,
-    };
-
-      const result = await handleBookAppointment(appointmentData);
-      setResult(result);
-
-      console.log(result)
-
-      if (result === 200) {
-         openPopup(
-            <div>
-            Your appointment was booked!
-            <br />
-            We will see you on {date} at {time}
-          </div>);
-       } else if (result === 400) {
-         openPopup('Booking failed.');
-       }
-  };
+   if (!email || emailError) {
+     console.error('Invalid email. Please correct the errors.');
+     return;
+   }
+ 
+   const selectedSpecialist = specialist[0].value;
+ 
+   const appointmentData = {
+     fullname,
+     email,
+     specialist: selectedSpecialist,
+     date,
+     time,
+   };
+ 
+   const result = await handleBookAppointment(appointmentData);
+   setResult(result);
+ 
+   console.log(result);
+ 
+   if (result === 200) {
+     openPopup(
+       <div>
+         Your appointment was booked!
+         <br />
+         We will see you on {date} at {time}
+       </div>
+     );
+   } else if (result === 400) {
+     openPopup('Booking failed.');
+   }
+ };
 
   return (
 <section id="contact-us">

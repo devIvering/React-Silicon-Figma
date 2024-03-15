@@ -1,0 +1,8 @@
+.header-shadow {
+    @include shadow-m;
+    background-color: white;
+}
+
+.header-fillerbackground {
+    background-color: $gray-100;
+}

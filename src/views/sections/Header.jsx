@@ -6,10 +6,11 @@ import { toggleMenu } from '../../js/script'
 
 
 
-const Header = () => {
+const Header = ({headerShadow, fillerBackground}) => {
 
   return (
-    <header>
+    <header className={headerShadow ? 'header-shadow' : (fillerBackground ? 'header-fillerbackground' : '')}>
+
       <div className="container">
         <Link id="logo" to="/">
           <img src={Logo} alt="silicon logotype" />

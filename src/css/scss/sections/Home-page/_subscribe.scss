@@ -46,6 +46,8 @@
                 @include md {
                     left: 50px;
                 }
+
+                @include lg {}
             }
 
             .subscribe-error {

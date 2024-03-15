@@ -6,7 +6,6 @@ import HomeIcon from '../images/icons/bx-home-alt.svg'
 import RightChevron from '../images/icons/bx-chevrons-right.svg'
 import ContactFooter from './sections/Contact-page/ContactFooter'
 import Header from './sections/Header';
-import './../css/layout.min.css';
 
 const News = () => {
   const [news, setNews] = useState([]);
@@ -31,6 +30,7 @@ const News = () => {
 
   return (
     <>
+   <Header headerShadow={true} />
     <div className="contact-link">
         <img src={HomeIcon} alt="Home-icon" />
         <NavLink to="/">Home</NavLink>

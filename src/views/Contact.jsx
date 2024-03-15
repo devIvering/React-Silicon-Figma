@@ -7,6 +7,7 @@ import Header from './sections/Header'
 const Contact = () => {
   return (
     <main> 
+        <Header fillerBackground={true}/>
         <ContactUs />
         <Location />
         <ContactFooter />
