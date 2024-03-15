@@ -98,14 +98,14 @@ const ContactUs = () => {
 
  const validateDate = (date) => {
    if (submittedDate && !date) {
-     return "Please select a date.";
+     return "Enter a date.";
    }
    return "";
  };
 
  const validateTime = (time) => {
    if (submittedTime && !time) {
-     return "Please select a time.";
+     return "Enter a time.";
    }
    return "";
  };

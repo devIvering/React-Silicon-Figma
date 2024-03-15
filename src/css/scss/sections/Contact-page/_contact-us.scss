@@ -93,6 +93,10 @@
 
                     .error-message-box {
                         color: red;
+
+                        .date-error-message, .time-error-message {
+                            max-width: 95px;
+                        }
                     }
                 }
 
