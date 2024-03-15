@@ -112,6 +112,11 @@
                 }
         
                 .content {
+                    .date-and-time-error {
+                        display: flex;
+                        gap: 70px;
+                    }
+
                     display: grid;
                     grid-template-columns: 1fr;
                     grid-template-areas:    "fullname"

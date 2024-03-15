@@ -84,26 +84,49 @@ const ContactUs = () => {
    }
  };
 
- const validateName = (fullname) => {
-   if (fullname.length > 0 && fullname.length < 3) {
-     return "Please enter at least 3 characters.";
+ const [submittedName, setSubmittedName] = useState(false);
+
+  const validateName = (fullname) => {
+    if (submittedName && (!fullname || fullname.length < 3)) {
+      return "Please enter at least 3 characters.";
+    }
+    return "";
+  };
+
+ const [submittedDate, setSubmittedDate] = useState(false);
+ const [submittedTime, setSubmittedTime] = useState(false);
+
+ const validateDate = (date) => {
+   if (submittedDate && !date) {
+     return "Please select a date.";
    }
    return "";
  };
 
+ const validateTime = (time) => {
+   if (submittedTime && !time) {
+     return "Please select a time.";
+   }
+   return "";
+ };
+ 
  const bookAppointment = async (e) => {
    e.preventDefault();
+
+   setSubmittedName(true)
+   setSubmittedDate(true);
+   setSubmittedTime(true);
  
    validateEmail(email);
  
    const nameError = validateName(fullname);
-   if (nameError) {
-     console.error('Invalid name. Please correct the errors.');
-     return;
-   }
-
-   if (!email || emailError) {
-     console.error('Invalid email. Please correct the errors.');
+ 
+   const dateError = validateDate(date);
+ 
+   const timeError = validateTime(time);
+ 
+   if (nameError || emailError || dateError || timeError) {
+     openPopup('Invalid input. Please correct the errors.');
      return;
    }
  
@@ -116,7 +139,6 @@ const ContactUs = () => {
      date,
      time,
    };
- 
    const result = await handleBookAppointment(appointmentData);
    setResult(result);
  
@@ -234,6 +256,14 @@ const ContactUs = () => {
                            />
                         </div>
                         </div>
+                           <div className="date-and-time-error">
+                               <div className="error-message-box">
+                                 <div className="date-error-message">{validateDate(date)}</div>
+                              </div>
+                                 <div className="error-message-box">
+                                    <div className="time-error-message">{validateTime(time)}</div>
+                                 </div>
+                              </div>
                      <button id="appointment-button" className="btn-theme" type="submit">Make an appointment</button>
                   </div>
                </div>
