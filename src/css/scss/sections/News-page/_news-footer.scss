@@ -8,9 +8,11 @@
         display: grid;
         justify-content: center;
         align-items: center;
-        padding: 40px;
         gap: 20px;
 
+        @include lg {
+            padding: 40px;
+        }
 
         .subscribe-box {
                 display: flex;
@@ -18,14 +20,14 @@
                 
                 input {
                 margin-top: 30px;
-                width: 300px;
+                width: 250px;
 
                 @include lg {
                     width: 700px;
                 }
             }
             button {
-                margin-left: 10px;
+                margin-left: -40px;
                 margin-top: 30px;
 
                 @include lg {

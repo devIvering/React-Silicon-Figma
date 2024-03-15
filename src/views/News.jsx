@@ -31,15 +31,13 @@ const News = () => {
   return (
     <>
    <Header headerShadow={true} />
-    <div className="contact-link">
+    <div className="news-breadcrumbs">
         <img src={HomeIcon} alt="Home-icon" />
         <NavLink to="/">Home</NavLink>
         <img src={RightChevron} alt="Right-chevron" />
         <NavLink to="/news">News</NavLink>
     </div>
-    <div className="contact-link">
-      <h1>Our News</h1>
-    </div>
+      <h1 className="our-news-text">Our News</h1>
     <div className="news-container">
       {news.map((item) => (
         <ItemBox key={item.id} item={item} />
