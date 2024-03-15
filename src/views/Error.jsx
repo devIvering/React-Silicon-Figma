@@ -26,12 +26,12 @@ const Error = () => {
                 </button>
              </NavLink>
           </div>
-       </div>
        <div className="error-footer">
           <div>
              <p>2024. All rights reserved. Silicon Template </p>
           </div>
        </div>
+   </div>
     </section>
     )
     }

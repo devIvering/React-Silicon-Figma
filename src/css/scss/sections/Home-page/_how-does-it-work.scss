@@ -29,8 +29,8 @@
       img {
         width: 50%;
 
-        @include lg {
-          width: 100%;
+        @include md {
+          width: 50%;
         }
       }
   

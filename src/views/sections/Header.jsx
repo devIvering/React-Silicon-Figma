@@ -19,7 +19,7 @@ const Header = ({headerShadow, fillerBackground}) => {
         <nav id="menu">
           <div className="menu-links">
             <NavLink className="nav-link" to="/#overview">Overview</NavLink>
-            <NavLink className="nav-link" to="/#features">Features</NavLink>
+            <NavLink className="nav-link" to="/features">Features</NavLink>
             <NavLink className="nav-link" to="/news">News</NavLink>
             <NavLink className="nav-link" to="/contact">Contact</NavLink>
           </div>
