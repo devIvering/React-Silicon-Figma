@@ -21,7 +21,7 @@ const Location = () => {
                 <h4>Medical Center 1</h4>
                 <div className="location-address-one">
                    <img src={LocationIcon} alt="Location-icon" />
-                   <p>4517 Washington Ave. Manchester, Kentucky 39495</p>
+                   <address>4517 Washington Ave. Manchester, Kentucky 39495</address>
                 </div>
                 <div className="contact-phonenumber">
                    <img src={PhoneIcon} alt="Phone-icon" />
@@ -37,7 +37,7 @@ const Location = () => {
                 <h4>Medical Center 2</h4>
                 <div className="location-address-two">
                    <a href="#"><img src={LocationIcon} alt="Location-icon" /></a>
-                   <p>2464 Royal Ln. Mesa,New Jersey 45463</p>
+                   <address>2464 Royal Ln. Mesa,New Jersey 45463</address>
                 </div>
                 <div className="contact-phonenumber">
                    <a href="#"><img src={PhoneIcon} alt="Phone-icon" /></a>

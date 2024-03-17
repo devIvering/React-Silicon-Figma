@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink, Link, useLocation } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import Logo from '../../images/logo/silicon-logo-light_theme.svg'
 import { toggleMenu } from '../../js/script'
 

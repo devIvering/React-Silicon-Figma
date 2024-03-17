@@ -16,9 +16,9 @@ const HowItWorks = () => {
   };
 
   const carouselSections = [
-    { color: currentImageIndex === 0 ? 'dark-blue' : 'light-gray', text: 'Step 1. Live account balance tracker' },
-    { color: currentImageIndex === 1 ? 'dark-blue' : 'light-gray', text: 'Step 2. Latest transaction history' },
-    { color: currentImageIndex === 2 ? 'dark-blue' : 'light-gray', text: 'Step 3. Safe transfers to your friends' }
+    { color: currentImageIndex === 0 ? 'dark-blue' : '', text: 'Step 1. Live account balance tracker' },
+    { color: currentImageIndex === 1 ? 'dark-blue' : '', text: 'Step 2. Latest transaction history' },
+    { color: currentImageIndex === 2 ? 'dark-blue' : '', text: 'Step 3. Safe transfers to your friends' }
   ];
   return (
     <section id="how-it-works">
